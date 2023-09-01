@@ -74,6 +74,9 @@ function blob_fixup {
 	vendor/etc/init/init.batterysecret.rc)
             sed -i '/seclabel/d' "$2" 
 	    ;;
+	vendor/etc/init/android.hardware.neuralnetworks@1.3-service-mtk-neuron.rc)
+            sed -i 's/start/enable/' "$2"
+            ;;
     esac
 }
 
