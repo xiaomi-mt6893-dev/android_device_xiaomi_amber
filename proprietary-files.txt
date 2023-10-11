@@ -446,6 +446,45 @@ vendor/bin/hw/android.hardware.usb@1.2-service-mediatekv2
 vendor/etc/init/android.hardware.usb@1.2-service-mediatekv2.rc
 -vendor/etc/vintf/manifest/android.hardware.usb@1.2-service-mediatekv2.xml
 
+# Thermal
+vendor/bin/mi_thermald
+vendor/bin/thermal
+vendor/bin/thermal_core
+vendor/bin/thermal_intf
+vendor/bin/thermal_manager
+vendor/bin/thermalloadalgod
+vendor/etc/init/init.thermal.rc
+vendor/etc/init/init.thermal_core.rc
+vendor/etc/init/init.thermal_manager.rc
+vendor/etc/init/init.thermalloadalgod.rc
+vendor/lib/libthermalalgo.so
+vendor/lib64/hw/thermal_hal.so
+vendor/lib64/libmtcloader.so
+vendor/etc/.tp/.thermal_policy_08
+vendor/etc/.tp/thermal.conf
+vendor/etc/thermal-camera.conf
+vendor/etc/thermal-class0.conf
+vendor/etc/thermal-k11r-camera.conf
+vendor/etc/thermal-k11r-class0.conf
+vendor/etc/thermal-k11r-huanji.conf
+vendor/etc/thermal-k11r-mgame.conf
+vendor/etc/thermal-k11r-navigation.conf
+vendor/etc/thermal-k11r-nolimits.conf
+vendor/etc/thermal-k11r-normal.conf
+vendor/etc/thermal-k11r-phone.conf
+vendor/etc/thermal-k11r-tgame.conf
+vendor/etc/thermal-k11r-video.conf
+vendor/etc/thermal-map-k11r.conf
+vendor/etc/thermal-map.conf
+vendor/etc/thermal-mgame.conf
+vendor/etc/thermal-navigation.conf
+vendor/etc/thermal-normal.conf
+vendor/etc/thermal-phone.conf
+vendor/etc/thermal-region-map.conf
+vendor/etc/thermal-tgame.conf
+vendor/etc/thermal-video.conf
+vendor/etc/thermald-devices.conf
+
 # Vibrator
 vendor/firmware/0_click_P_RTP.bin
 vendor/firmware/1_doubelClick_P_RTP.bin
