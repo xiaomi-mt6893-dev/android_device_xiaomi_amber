@@ -41,6 +41,19 @@ PRODUCT_PACKAGES += \
     checkpoint_gc \
     otapreopt_script
 
+# Display
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.allocator@2.0.vendor \
+    android.hardware.graphics.allocator@3.0.vendor \
+    android.hardware.graphics.allocator@4.0.vendor \
+    android.hardware.graphics.composer@2.1-resources.vendor \
+    android.hardware.graphics.composer@2.2-resources.vendor \
+    android.hardware.graphics.composer@2.3-service \
+    android.hardware.memtrack-service.mediatek-mali
+
+PRODUCT_PACKAGES += \
+    libdrm.vendor \
+
 # Dynamic Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_BUILD_SUPER_PARTITION := false
