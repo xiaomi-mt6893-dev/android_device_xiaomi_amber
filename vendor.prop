@@ -1,3 +1,6 @@
+# AEE
+ro.vendor.have_aee_feature=0
+
 # Audio
 aaudio.mmap_exclusive_policy=2
 aaudio.mmap_policy=2
