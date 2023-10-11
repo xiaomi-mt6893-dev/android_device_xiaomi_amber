@@ -37,6 +37,7 @@ vendor/etc/aurisys_config_hifi3.xml
 vendor/etc/aurisys_param/FV-SAM-MTKXX.dat
 vendor/etc/aurisys_param/Speech_AudioParam.xml
 vendor/lib/libaurisysdemo.so
+vendor/lib64/hw/sound_trigger.primary.default.so
 
 # Audio (configurations)
 vendor/etc/audio_param/AudioParamOptions.xml
