@@ -1,5 +1,11 @@
 # Unpinned blobs from amber_global-user 12 SP1A.210812.016 V14.0.5.0.TKWMIXM release-keys
 
+# AEE (Android Exception Enhancement)
+vendor/lib/libaedv.so
+vendor/lib/libladder.so
+vendor/lib64/libaedv.so
+vendor/lib64/libladder.so
+
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.1-service-mediatek
 vendor/etc/init/android.hardware.bluetooth@1.1-service-mediatek.rc
