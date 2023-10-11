@@ -6,6 +6,19 @@
 
 DEVICE_PATH := device/xiaomi/amber
 
+# A/B
+AB_OTA_UPDATER := true
+AB_OTA_PARTITIONS += \
+    boot \
+    dtbo \
+    product \
+    system \
+    system_ext \
+    vendor \
+    vbmeta \
+    vbmeta_system \
+    vbmeta_vendor
+
 # APEX
 DEXPREOPT_GENERATE_APEX_IMAGE := true
 
