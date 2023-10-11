@@ -37,7 +37,7 @@ vendor/lib64/libmml.so
 vendor/lib64/libpqparamparser.so
 vendor/lib64/mt6893/arm.graphics-V1-ndk_platform.so
 vendor/lib64/mt6893/libpq_prot.so
-vendor/lib/arm.graphics-V1-ndk_platform.so
+vendor/lib/mt6893/arm.graphics-V1-ndk_platform.so
 vendor/lib/libDefaultFpsActor.so
 vendor/lib/libFrameRecord.so
 vendor/lib/libNoFpsActor.so
@@ -62,7 +62,6 @@ vendor/lib/libpq_cust_base.so
 vendor/lib/libpqframework.so
 
 vendor/lib/egl/egl.cfg
-vendor/lib/egl/libGLES_mali.so
 vendor/lib/egl/libGLES_meow.so
 vendor/lib/egl/libMEOW_data.so
 vendor/lib/egl/libMEOW_gift.so
