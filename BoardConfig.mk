@@ -40,6 +40,7 @@ BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 
 BOARD_KERNEL_CMDLINE := \
     androidboot.init_fatal_reboot_target=recovery \
+    androidboot.selinux=permissive \
     bootopt=64S3,32N2,64N2
 
 BOARD_MKBOOTIMG_ARGS += \
