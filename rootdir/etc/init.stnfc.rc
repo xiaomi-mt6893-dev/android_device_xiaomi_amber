@@ -1,0 +1,6 @@
+# This file needs to be executed by vendor_init at boot of the device,
+# in normal and FM mode.
+
+# Start the HAL service in all modes (FM, meta, normal)
+on post-fs
+    start nfc_hal_service

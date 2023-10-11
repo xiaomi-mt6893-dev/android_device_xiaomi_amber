@@ -1,0 +1,16 @@
+#
+# Copyright (C) 2023 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+on early-init
+    mount ext4 /dev/block/by-name/rescue /cache rw wait
+    rm /cache/debug.txt
+    start cache_debug
+
+service cache_debug /system/bin/logcat -b all -f /cache/debug.txt -v threadtime
+    class main
+    user root
+    group system
+    disabled

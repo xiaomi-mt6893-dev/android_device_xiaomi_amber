@@ -1,0 +1,42 @@
+on init
+    # Tune 'camera-daemon' process
+    write /dev/stune/camera-daemon/schedtune.prefer_idle 1
+    write /dev/stune/camera-daemon/schedtune.boost 0
+
+    # Reset NNAPI performance tuning
+    write /dev/stune/nnapi-hal/schedtune.boost 0
+    write /dev/stune/nnapi-hal/schedtune.prefer_idle 0
+
+on post-fs
+    # Tune boot performance
+    write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "0 100"
+    write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "1 100"
+    write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "2 100"
+    write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "3 100"
+
+on post-fs-data
+    # Set-up ZRAM environment
+    write /sys/block/zram0/comp_algorithm lz4
+    write /proc/sys/vm/page-cluster 0
+    write /proc/sys/vm/swappiness 100
+    write /sys/kernel/mm/swap/vma_ra_enabled false
+    swapon_all /vendor/etc/fstab.mt6893
+
+on property:sys.boot_completed=1
+    # Set-up EAS (Energy Aware Scheduler) environment
+    write /sys/devices/system/cpu/eas/enable 1
+    write /proc/cpufreq/cpufreq_sched_disable 0
+
+    # Set-up scheduler tuning environment
+    write /dev/stune/foreground/schedtune.prefer_idle 1
+    write /dev/stune/top-app/schedtune.prefer_idle 1
+    write /dev/stune/top-app/schedtune.boost 100
+    write /dev/stune/rt/schedtune.prefer_idle 1
+    write /proc/sys/kernel/sched_migration_cost_ns 200000
+    write /proc/perfmgr/boost_ctrl/eas_ctrl/sched_big_task_rotation 1
+
+    # Restore boot performance tuning
+    write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "0 0"
+    write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "1 0"
+    write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "2 0"
+    write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "3 0"
