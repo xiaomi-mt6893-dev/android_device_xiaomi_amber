@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     Copyright (C) 2023 LineageOS 
+     
+     SPDX-License-Identifier: Apache-2.0
+-->
+<WifiVendorHal version="1">
+    <path>/vendor/lib64/libwifi-hal-mtk.so</path>
+    <primary>1</primary>
+</WifiVendorHal>
