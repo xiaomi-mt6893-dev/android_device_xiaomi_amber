@@ -1,5 +1,8 @@
 # Unpinned blobs from amber_global-user 12 SP1A.210812.016 V14.0.5.0.TKWMIXM release-keys
 
+# ConsumerIr
+vendor/lib64/hw/consumerir.common.so
+
 # Display
 vendor/bin/hw/android.hardware.graphics.allocator@4.0-service-mediatek
 vendor/etc/init/android.hardware.graphics.allocator@4.0-service-mediatek.rc
