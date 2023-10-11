@@ -72,5 +72,8 @@ BOARD_AVB_BOOT_ALGORITHM := SHA256_RSA2048
 BOARD_AVB_BOOT_ROLLBACK_INDEX := 1
 BOARD_AVB_BOOT_ROLLBACK_INDEX_LOCATION := 1
 
+# HIDL
+DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
+
 # Inherit the proprietary files
 include vendor/xiaomi/amber/BoardConfigVendor.mk
