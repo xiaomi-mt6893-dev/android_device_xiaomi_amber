@@ -46,6 +46,7 @@ BOARD_MKBOOTIMG_ARGS += \
     --ramdisk_offset $(BOARD_RAMDISK_OFFSET) \
     --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 
+# Platform
 BOARD_HAS_MTK_HARDWARE := true
 TARGET_BOARD_PLATFORM := mt6893
 
