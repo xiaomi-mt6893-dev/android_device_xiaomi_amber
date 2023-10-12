@@ -221,6 +221,17 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/mediatek \
     hardware/xiaomi
 
+# Sensors
+PRODUCT_PACKAGES += \
+    libsensorndkbridge \
+    android.hardware.sensors@1.0.vendor \
+    android.hardware.sensors@2.1.vendor \
+    android.frameworks.sensorservice@1.0.vendor \
+    android.hardware.sensors@2.1-service.multihal
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
+
 # Soundtrigger
 PRODUCT_PACKAGES += \
     android.hardware.soundtrigger@2.3-impl
