@@ -193,6 +193,13 @@ vendor/firmware/BT_FW.cfg
 vendor/firmware/soc3_0_ram_bt_1_1_hdr.bin
 vendor/firmware/soc3_0_ram_bt_1a_1_hdr.bin
 
+# Charger
+vendor/bin/batterysecret
+vendor/bin/smartcharging
+vendor/etc/init/init.batterysecret.rc
+vendor/etc/init/smartcharging_init.rc
+vendor/lib64/libsmartcharging.so
+
 # ConsumerIr
 vendor/lib64/hw/consumerir.common.so
 
