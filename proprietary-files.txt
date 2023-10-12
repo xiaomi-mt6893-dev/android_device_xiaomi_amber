@@ -715,6 +715,15 @@ vendor/lib64/libsmartcharging.so
 # ConsumerIr
 vendor/lib64/hw/consumerir.common.so
 
+# Connectivity
+vendor/bin/conninfra_loader
+vendor/firmware/soc3_0_patch_wmmcu_1a_1_hdr.bin
+vendor/firmware/soc3_0_ram_mcu_1_1_hdr.bin
+vendor/firmware/soc3_0_ram_mcu_1a_1_hdr.bin
+vendor/firmware/soc3_0_ram_mcu_e1_hdr.bin
+vendor/firmware/soc3_0_ram_wmmcu_1a_1_hdr.bin
+vendor/firmware/conninfra.cfg
+
 # Display
 vendor/bin/hw/android.hardware.graphics.allocator@4.0-service-mediatek
 vendor/etc/init/android.hardware.graphics.allocator@4.0-service-mediatek.rc
