@@ -316,6 +316,12 @@ vendor/lib/libfgauge_gm30.so
 vendor/lib/hw/gatekeeper.beanpod.so
 vendor/lib64/hw/gatekeeper.beanpod.so
 
+# HotwordEnrollment
+-product/priv-app/HotwordEnrollmentOKGoogleRISCV/HotwordEnrollmentOKGoogleRISCV.apk
+-product/priv-app/HotwordEnrollmentXGoogleRISCV/HotwordEnrollmentXGoogleRISCV.apk
+system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml
+-system_ext/framework/com.android.hotwordenrollment.common.util.jar
+
 # IMS (IP Multimedia Subsystem)
 system/bin/vtservice
 system/etc/init/init.vtservice.rc

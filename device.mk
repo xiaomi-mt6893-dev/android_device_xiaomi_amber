@@ -144,6 +144,10 @@ PRODUCT_PACKAGES += \
     libhwbinder.vendor \
     android.hidl.allocator@1.0.vendor
 
+# HotwordEnrollement
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-hotword.xml
+
 # IMS (IP Multimedia Subsystem)
 PRODUCT_BOOT_JARS += \
     mediatek-carrier-config-manager \
