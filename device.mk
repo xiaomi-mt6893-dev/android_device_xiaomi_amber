@@ -131,7 +131,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     libdrm.vendor \
-    libutils-v32
+    libutils-v32 \
+    libunwindstack-v32
 
 # DRM
 PRODUCT_PACKAGES += \
