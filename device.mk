@@ -65,6 +65,9 @@ PRODUCT_PACKAGES += \
     libtinycompress \
     libnbaio_mono
 
+PRODUCT_PACKAGES += \
+    MtkInCallService
+
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/audio/,$(TARGET_COPY_OUT_VENDOR)/etc)
 
