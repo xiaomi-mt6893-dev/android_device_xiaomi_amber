@@ -134,6 +134,12 @@ ro.vendor.smvr.p2batch.vga=32
 # Gatekeeper
 ro.hardware.gatekeeper=beanpod
 
+# GNSS
+ro.vendor.gps.chrdev=gps_drv
+ro.vendor.mtk_agps_app=1
+ro.vendor.mtk_gps_support=1
+ro.vendor.mtk_log_hide_gps=0
+
 # IMS (IP Multimedia Subsystem)
 persist.vendor.anr.enhancement=0
 persist.vendor.ims_support=1
