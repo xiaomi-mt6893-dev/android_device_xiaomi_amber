@@ -4,6 +4,11 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+LOCAL_PATH := device/xiaomi/amber
+
+# Project ID Quota
+$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
+
 # Installs gsi keys into ramdisk, to boot a developer GSI with verified boot.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 
