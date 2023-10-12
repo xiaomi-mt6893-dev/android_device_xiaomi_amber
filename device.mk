@@ -196,10 +196,6 @@ PRODUCT_BOOT_JARS += \
     mediatek-telephony-base \
     mediatek-telephony-common
 
-PRODUCT_PACKAGES += \
-    CarrierConfigOverlay \
-    PhoneOverlay \
-
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-com.mediatek.ims.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-com.mediatek.ims.xml
 
@@ -246,6 +242,17 @@ PRODUCT_PACKAGES += \
     libtextclassifier_hash.vendor
 
 # Overlays
+PRODUCT_PACKAGES += \
+    CarrierConfigOverlay \
+    PhoneOverlay \
+    WifiResOverlay \
+    FrameworksResOverlay \
+    SettingsProviderOverlay \
+    SettingsResOverlay \
+
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay-lineage
+
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
 # Power
@@ -343,7 +350,6 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service-lazy
 
 PRODUCT_PACKAGES += \
-    WifiResOverlay \
     wpa_supplicant \
     hostapd
 
