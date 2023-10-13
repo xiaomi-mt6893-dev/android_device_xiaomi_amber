@@ -27,6 +27,16 @@ $(VENDOR_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@mkdir -p $(TARGET_OUT_VENDOR)/lib/egl
 	@mkdir -p $(TARGET_OUT_VENDOR)/lib64/egl
 
+	@ln -sf mt6893/libmtk_drvb.so $(TARGET_OUT_VENDOR)/lib/libmtk_drvb.so
+	@ln -sf mt6893/libmtk_drvb.so $(TARGET_OUT_VENDOR)/lib64/libmtk_drvb.so
+	@ln -sf mt6893/libaiselector.so $(TARGET_OUT_VENDOR)/lib/libaiselector.so
+	@ln -sf mt6893/libaiselector.so $(TARGET_OUT_VENDOR)/lib64/libaiselector.so
+	@ln -sf mt6893/libgpudataproducer.so $(TARGET_OUT_VENDOR)/lib/libgpudataproducer.so
+	@ln -sf mt6893/libgpudataproducer.so $(TARGET_OUT_VENDOR)/lib64/libgpudataproducer.so
+	@ln -sf mt6893/libnir_neon_driver.so $(TARGET_OUT_VENDOR)/lib/libnir_neon_driver.so
+	@ln -sf mt6893/libnir_neon_driver.so $(TARGET_OUT_VENDOR)/lib64/libnir_neon_driver.so
+	@ln -sf mt6893/libneuron_platform.vpu.so $(TARGET_OUT_VENDOR)/lib/libneuron_platform.vpu.so
+	@ln -sf mt6893/libneuron_platform.vpu.so $(TARGET_OUT_VENDOR)/lib64/libneuron_platform.vpu.so
 	@ln -sf mt6893/libpq_prot.so $(TARGET_OUT_VENDOR)/lib/libpq_prot.so
 	@ln -sf mt6893/libpq_prot.so $(TARGET_OUT_VENDOR)/lib64/libpq_prot.so
 	@ln -sf mt6893/libGLES_mali.so $(TARGET_OUT_VENDOR)/lib/egl/libGLES_mali.so
@@ -39,6 +49,9 @@ $(VENDOR_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@ln -sf mt6893/android.hardware.graphics.allocator@4.0-impl-mediatek.so $(TARGET_OUT_VENDOR)/lib64/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so
 	@ln -sf mt6893/android.hardware.graphics.mapper@4.0-impl-mediatek.so $(TARGET_OUT_VENDOR)/lib/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so
 	@ln -sf mt6893/android.hardware.graphics.mapper@4.0-impl-mediatek.so $(TARGET_OUT_VENDOR)/lib64/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so
+	@ln -sf mt6893/libmcv_runtime.mtk.so $(TARGET_OUT_VENDOR)/lib64/libmcv_runtime.mtk.so
+	@ln -sf mt6893/libDR.so $(TARGET_OUT_VENDOR)/lib64/libDR.so
+	@ln -sf mt6893/libmnl.so $(TARGET_OUT_VENDOR)/lib64/libmnl.so
 
 	$(hide) touch $@
 
