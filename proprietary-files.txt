@@ -1462,6 +1462,14 @@ vendor/lib64/vendor.mediatek.hardware.nvram@1.0.so
 vendor/lib64/vendor.mediatek.hardware.nvram@1.1.so
 vendor/lib/libnvram.so
 
+# NFC
+vendor/bin/hw/android.hardware.nfc@1.2-service-st
+vendor/bin/nfcstackp-vendor
+vendor/etc/init/android.hardware.nfc@1.2-service-st.rc
+vendor/lib64/libfile_op.so
+vendor/lib64/libnxp_extamp_intf.so
+vendor/lib64/nfc_nci.st21nfc.st.so
+
 # Power
 vendor/etc/init/bootperf.rc
 vendor/etc/init/init.fpsgo.rc
