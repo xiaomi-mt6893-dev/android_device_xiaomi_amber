@@ -1,13 +1,9 @@
-# MTK platform .rc configure
-
+import /vendor/etc/init/hw/init.connectivity.rc
 import /vendor/etc/init/hw/init.mt6893.usb.rc
 import /vendor/etc/init/hw/init.project.rc
 import /vendor/etc/init/hw/init.sensor_2_0.rc
 import /vendor/etc/init/hw/init.cgroup.rc
-
-# init.modem.rc must be the LAST rc file because vold.post_fs_data_done is set in it
 import /vendor/etc/init/hw/init.modem.rc
-# *** DO NOT import the new rc file after this line ***
 
 on early-init
     # boot perf. tune
@@ -19,17 +15,6 @@ on early-init
 
 on init
 
-    # Support legacy paths
-    symlink /sdcard /mnt/sdcard
-
-    # if primary storage is physical, set ro.vold.primary_physical to 1
-    # setprop ro.vold.primary_physical 1
-
-    mkdir /mnt/cd-rom 0000 system system
-
-    # add this link for cust mount
-    symlink /dev/block/platform/bootdevice /dev/block/bootdevice
-
 # change lk_env permission
     chown root system /proc/lk_env
     chmod 0660 /proc/lk_env
@@ -39,9 +24,9 @@ on init
     write /proc/sys/net/core/rmem_max 8388608
 
 # update cpus for cpuset cgroup
-    write /dev/cpuset/foreground/cpus 0-3,5-6
+    write /dev/cpuset/foreground/cpus 0-7
     write /dev/cpuset/foreground/boost/cpus 0-7
-    write /dev/cpuset/background/cpus 0-1
+    write /dev/cpuset/background/cpus 0-3
     write /dev/cpuset/system-background/cpus 0-3
     write /dev/cpuset/top-app/cpus 0-7
 
@@ -86,12 +71,22 @@ on charger
 
     chown system system /sys/class/leds/lcd-backlight/brightness
     chmod 0664 /sys/class/leds/red/brightness
+    chown system system /sys/class/leds/red/brightness
+    chmod 0664 /sys/class/leds/green/brightness
+    chown system system /sys/class/leds/green/brightness
+    chmod 0664 /sys/class/leds/blue/brightness
+    chown system system /sys/class/leds/blue/brightness
+    chmod 0664 /sys/class/leds/red/blink
+    chown system system /sys/class/leds/red/blink
+    chmod 0664 /sys/class/leds/green/blink
+    chown system system /sys/class/leds/green/blink
+    chmod 0664 /sys/class/leds/blue/blink
+    chown system system /sys/class/leds/blue/blink
     start vendor.light-default
 
     start mi_thermald
-    # Stop bootprof
-    write /proc/bootprof "0"
 
+on early-fs
 on fs
     start vendor.boot-hal-1-2
 
@@ -109,19 +104,12 @@ on fs
     mount ext4 /dev/block/bootdevice/by-name/rescue /mnt/rescue noatime
     restorecon_recursive /mnt/rescue
 
-on fs
-
-   mount iso9660 loop@/vendor/etc/iAmCdRom.iso /mnt/cd-rom ro
-
 on late-fs
     wait_for_prop hwservicemanager.ready "true"
 
     mount_all --late
 
 on post-fs
-
-    # Support legacy paths
-    symlink /sdcard /storage/sdcard0
 
     #change permissions for mediaserver
     chown root media /proc/clkmgr/mipi_test
@@ -730,6 +718,7 @@ on post-fs-data
 
 # End of adding by MTK drivers
 # -----------------------
+on zygote-start
 
 on early-boot
     verity_update_state
@@ -773,7 +762,23 @@ on boot
     chown system system /sys/class/leds/button-backlight/trigger
     chown system system /sys/class/leds/keyboard-backlight/trigger
     chown system system /sys/class/leds/jogball-backlight/trigger
+    chown system system /sys/class/leds/red/trigger
+    chown system system /sys/class/leds/green/trigger
+    chown system system /sys/class/leds/blue/trigger
     
+    chmod 0664 /sys/class/leds/red/brightness
+    chown system system /sys/class/leds/red/brightness
+    chmod 0664 /sys/class/leds/green/brightness
+    chown system system /sys/class/leds/green/brightness
+    chmod 0664 /sys/class/leds/blue/brightness
+    chown system system /sys/class/leds/blue/brightness
+
+    chmod 0664 /sys/class/leds/red/blink
+    chown system system /sys/class/leds/red/blink
+    chmod 0664 /sys/class/leds/green/blink
+    chown system system /sys/class/leds/green/blink
+    chmod 0664 /sys/class/leds/blue/blink
+    chown system system /sys/class/leds/blue/blink
     # gauge symbolic
     symlink /sys/devices/platform/10026000.pwrap/10026000.pwrap:mt6359p/mt6359p-gauge /dev/gauge
     symlink /sys/devices/platform/1000d000.pwrap/1000d000.pwrap:main_pmic/mt6357-gauge /dev/gauge
@@ -998,40 +1003,6 @@ on property:sys.boot_completed=1
 on property:sys.boot_completed=1
     write /proc/perfmgr/boost_ctrl/cpu_ctrl/boot_freq "-1 -1 -1 -1 -1 -1"
     write /sys/devices/platform/boot_dramboost/dramboost/dramboost 0
-
-#service dpfd /vendor/bin/dpfd
-#	user root
-#	group system media
-
-#
-#  External Modme control related services
-#
-
-#
-#  Modem related services (Begin)
-#
-##Add by T.Zh for ppp daemon
-#service pppd /system/bin/pppd file /data/misc/ppp/ppp_options
-#    user root
-#    disabled
-#    oneshot
-#
-##
-#
-#  Modem related services (End)
-#
-
-#add for power-off alarm
-#service poad /vendor/bin/poad
-#    class main
-#    user system
-#    group system
-#    oneshot
-
-#service BGW /vendor/xbin/BGW
-#	user system
-#	group gps system radio
-#	class main
 
 # Battery info
 on property:persist.vendor.mediatek.fg.disable=1

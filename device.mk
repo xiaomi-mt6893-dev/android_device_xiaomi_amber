@@ -48,20 +48,9 @@ PRODUCT_PACKAGES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio.service.mediatek \
+    android.hardware.audio.service \
     android.hardware.audio@7.0-impl \
-    android.hardware.audio.effect@7.0-impl \
-    android.hardware.audio.effect@6.0-impl \
-    android.hardware.audio.common-util.vendor \
-    android.hardware.audio.common@5.0.vendor \
-    android.hardware.audio.common@6.0.vendor \
-    android.hardware.audio.common@6.0-util.vendor \
-    android.hardware.audio.common@7.0.vendor \
-    android.hardware.audio.common@7.0-util.vendor \
-    android.hardware.audio@6.0.vendor \
-    android.hardware.audio@6.0-util.vendor \
-    android.hardware.audio@7.0-util.vendor \
-    android.hardware.audio@7.0.vendor
+    android.hardware.audio.effect@7.0-impl
 
 PRODUCT_PACKAGES += \
     audio.usb.default \
@@ -121,11 +110,7 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.allocator@2.0.vendor \
-    android.hardware.graphics.allocator@3.0.vendor \
     android.hardware.graphics.allocator@4.0.vendor \
-    android.hardware.graphics.composer@2.1-resources.vendor \
-    android.hardware.graphics.composer@2.2-resources.vendor \
     android.hardware.graphics.composer@2.3-service \
     android.hardware.memtrack-service.mediatek-mali
 
@@ -151,13 +136,11 @@ PRODUCT_BUILD_SUPER_PARTITION := false
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1.vendor \
-    android.hardware.biometrics.fingerprint@2.2.vendor \
     android.hardware.biometrics.fingerprint@2.3.vendor
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0-impl:64 \
+    android.hardware.gatekeeper@1.0-impl \
     android.hardware.gatekeeper@1.0-service
 
 # GPS
@@ -223,7 +206,6 @@ PRODUCT_PACKAGES += \
 
 # Media
 PRODUCT_PACKAGES += \
-    libcodec2_hidl@1.1.vendor \
     libcodec2_hidl@1.2.vendor \
     libavservices_minijail_vendor \
     libstagefright_softomx_plugin.vendor \
@@ -282,8 +264,6 @@ PRODUCT_ENFORCE_RRO_TARGETS := *
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service-mediatek \
-    android.hardware.power@1.0.vendor \
-    android.hardware.power@1.1.vendor \
     android.hardware.power@1.2.vendor
 
 PRODUCT_PACKAGES += \
@@ -311,6 +291,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     init.cgroup.rc \
+    init.connectivity.rc \
     init.modem.rc \
     init.mt6893.rc \
     init.mt6893.usb.rc \
@@ -357,10 +338,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/vibrator/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/etc/excluded-input-devices.xml
-
-# Thermal
-PRODUCT_PACKAGES += \
-    android.hardware.thermal@2.0-service.mtk
 
 # USB
 PRODUCT_PACKAGES += \

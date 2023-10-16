@@ -51,7 +51,7 @@ prebuilt_etc {
 prebuilt_etc {
     name: "init.project.rc",
     src: "etc/init.project.rc",
-    sub_dir: "init",
+    sub_dir: "init/hw",
     vendor: true,
 }
 
@@ -72,6 +72,13 @@ prebuilt_etc {
 prebuilt_etc {
     name: "init.target.rc",
     src: "etc/init.target.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.connectivity.rc",
+    src: "etc/init.connectivity.rc",
     sub_dir: "init/hw",
     vendor: true,
 }

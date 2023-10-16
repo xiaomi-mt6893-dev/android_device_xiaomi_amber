@@ -1,5 +1,15 @@
+
+on post-fs
+
+    # boot perf. tune
+    write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "0 100"
+    write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "1 100"
+    write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "2 100"
+    write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "3 100"
+
 on init
-    # Set-up EAS (Energy Aware Scheduler) tuning nodes
+
+ # Create energy-aware scheduler tuning nodes
     mkdir /dev/stune/foreground
     mkdir /dev/stune/background
     mkdir /dev/stune/top-app
@@ -20,14 +30,40 @@ on init
     chmod 0664 /dev/stune/top-app/tasks
     chmod 0664 /dev/stune/rt/tasks
 
-    # Set-up I/O scheduler tune group
+    # Reset stune group setting for NNAPI HAL processes
+    write /dev/stune/nnapi-hal/schedtune.boost 0
+    write /dev/stune/nnapi-hal/schedtune.prefer_idle 0
+
+    # create an stune group for camera-specific processes
+    mkdir /dev/stune/camera-daemon
+    write /dev/stune/camera-daemon/schedtune.prefer_idle 0
+    write /dev/stune/camera-daemon/schedtune.boost 0
+    chown system system /dev/stune/camera-daemon
+    chown system system /dev/stune/camera-daemon/tasks
+    chmod 0664 /dev/stune/camera-daemon/tasks
+
+    # create io boost group
     mkdir /dev/stune/io
     chown system system /dev/stune/io
     chown system system /dev/stune/io/tasks
     chmod 0666 /dev/stune/io/tasks
 
 on property:sys.boot_completed=1
-    # Set-up scheduler tune permissions
+
+    write /sys/devices/system/cpu/eas/enable 2
+    write /proc/cpufreq/cpufreq_sched_disable 0
+
     chown system system /dev/stune/foreground/schedtune.prefer_idle
     chown system system /dev/stune/top-app/schedtune.prefer_idle
     chown system system /dev/stune/rt/schedtune.prefer_idle
+    write /dev/stune/foreground/schedtune.prefer_idle 0
+    write /dev/stune/top-app/schedtune.prefer_idle 0
+    write /dev/stune/rt/schedtune.prefer_idle 0
+    write /proc/sys/kernel/sched_migration_cost_ns 200000
+    write /proc/perfmgr/boost_ctrl/eas_ctrl/sched_big_task_rotation 1
+
+    # restore perf. parameters
+    write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "0 0"
+    write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "1 0"
+    write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "2 0"
+    write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "3 0"
