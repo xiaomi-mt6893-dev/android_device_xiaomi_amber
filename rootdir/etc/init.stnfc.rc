@@ -1,0 +1,15 @@
+service nfc_hal_service /vendor/bin/hw/android.hardware.nfc-service.st
+    override
+    class hal
+    user nfc
+    group nfc
+    disabled
+
+on early-init && property:ro.boot.product.hardware.sku=agate
+    setprop ro.boot.product.vendor.sku nfc
+
+on early-init && property:ro.boot.product.hardware.sku=amber
+    setprop ro.boot.product.vendor.sku nfc
+
+on init && property:ro.boot.product.vendor.sku=nfc
+    start nfc_hal_service
