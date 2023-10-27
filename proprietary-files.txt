@@ -158,6 +158,13 @@ vendor/firmware/RCV-cs35l41-dsp1-spk-prot.bin
 vendor/firmware/cs35l41-dsp1-spk-cali.bin
 vendor/firmware/cs35l41-dsp1-spk-prot.bin
 
+# Audio (FX modules)
+vendor/lib/soundfx/libaudiopreprocessing_mtk.so
+vendor/lib/soundfx/libmisoundfx.so
+vendor/lib/soundfx/libswdap.so
+vendor/lib/soundfx/libswgamedap.so
+vendor/lib/soundfx/libswvqe.so
+
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.1-service-mediatek
 vendor/etc/init/android.hardware.bluetooth@1.1-service-mediatek.rc
@@ -165,13 +172,13 @@ vendor/firmware/BT_FW.cfg
 vendor/firmware/soc3_0_ram_bt_1_1_hdr.bin
 vendor/firmware/soc3_0_ram_bt_1a_1_hdr.bin
 vendor/lib/hw/android.hardware.bluetooth@1.1-impl-mediatek.so
+vendor/lib/hw/vendor.mediatek.hardware.bluetooth.audio@2.1-impl.so
 vendor/lib/hw/vendor.mediatek.hardware.bluetooth.audio@2.2-impl.so
 vendor/lib/libbluetooth_audio_session_mediatek.so
 vendor/lib/libbluetooth_mtk.so
 vendor/lib/libbluetooth_mtk_pure.so
 vendor/lib/libbt-vendor.so
 vendor/lib/vendor.mediatek.hardware.bluetooth.audio@2.1.so
-vendor/lib/vendor.mediatek.hardware.bluetooth.audio@2.2.so
 vendor/lib/vendor.mediatek.hardware.bluetooth.audio@2.2.so
 vendor/lib64/hw/android.hardware.bluetooth@1.1-impl-mediatek.so
 vendor/lib64/hw/vendor.mediatek.hardware.bluetooth.audio@2.2-impl.so
@@ -249,7 +256,6 @@ vendor/etc/init/vpud.rc
 vendor/lib/libvpu.so
 vendor/lib/libvpu5.so
 vendor/lib/libvpud_vcodec.so
-vendor/lib/mt6893/libneuron_platform.vpu.so
 vendor/lib64/agateimx355_mipi_raw_IdxMgr.so
 vendor/lib64/agateimx355_mipi_raw_IdxMgr.so
 vendor/lib64/agateimx355_mipi_raw_tuning.so
@@ -694,7 +700,6 @@ vendor/lib64/libwa_rtdof.so
 vendor/lib64/libwa_rtrefocus.so
 vendor/lib64/libwa_sat.so
 vendor/lib64/libxmi_high_dynamic_range.so
-vendor/lib64/mt6893/libneuron_platform.vpu.so
 vendor/lib64/mtkcam/libmtkcam_streaminfo_plugin-p1stt.so
 vendor/lib64/vendor.mediatek.hardware.camera.atms@1.0.so
 vendor/lib64/vendor.mediatek.hardware.camera.bgservice@1.0.so
@@ -742,6 +747,7 @@ vendor/lib/hw/mt6893/android.hardware.graphics.allocator@4.0-impl-mediatek.so
 vendor/lib/hw/mt6893/android.hardware.graphics.mapper@4.0-impl-mediatek.so
 vendor/lib/hw/mt6893/vulkan.mali.so
 vendor/lib/hw/vendor.mediatek.hardware.mms@1.6-impl.so
+vendor/lib/hw/gralloc.default.so
 vendor/lib/libDefaultFpsActor.so
 vendor/lib/libFrameRecord.so
 vendor/lib/libNoFpsActor.so
@@ -767,6 +773,8 @@ vendor/lib/libpq_cust_base.so
 vendor/lib/libpqframework.so
 vendor/lib/libudf.so
 vendor/lib/mt6893/arm.graphics-V1-ndk_platform.so
+vendor/lib/mt6893/arm.graphics-ndk_platform.so
+vendor/lib/mt6893/libpq_prot.so
 vendor/lib/vendor.mediatek.hardware.mmagent@1.0.so
 vendor/lib64/egl/libGLES_meow.so
 vendor/lib64/egl/libMEOW_data.so
@@ -779,6 +787,7 @@ vendor/lib64/hw/mt6893/android.hardware.graphics.allocator@4.0-impl-mediatek.so
 vendor/lib64/hw/mt6893/android.hardware.graphics.mapper@4.0-impl-mediatek.so
 vendor/lib64/hw/mt6893/vulkan.mali.so
 vendor/lib64/hw/vendor.mediatek.hardware.mms@1.6-impl.so
+vendor/lib64/hw/gralloc.default.so
 vendor/lib64/libDefaultFpsActor.so
 vendor/lib64/libFrameRecord.so
 vendor/lib64/libNoFpsActor.so
@@ -796,6 +805,7 @@ vendor/lib64/libmml.so
 vendor/lib64/libpqparamparser.so
 vendor/lib64/libudf.so
 vendor/lib64/mt6893/arm.graphics-V1-ndk_platform.so
+vendor/lib64/mt6893/arm.graphics-ndk_platform.so
 vendor/lib64/mt6893/libpq_prot.so
 vendor/lib64/vendor.mediatek.hardware.composer_ext@1.0.so
 vendor/lib64/vendor.mediatek.hardware.mmagent@1.0.so
@@ -828,6 +838,7 @@ vendor/lib64/hw/fingerprint.goodix.so:vendor/lib64/hw/fingerprint.goodix.default
 vendor/lib64/libgf_ca.so
 vendor/lib64/libgf_hal.so
 vendor/lib64/libgoodixhwfingerprint.so
+vendor/lib64/vendor.xiaomi.hardware.fingerprintextension@1.0.so
 vendor/lib64/vendor.xiaomi.hardware.fx.tunnel@1.0.so
 
 # Fuelgauge
@@ -839,7 +850,9 @@ vendor/lib/libfgauge_gm30.so
 
 # Gatekeeper
 vendor/lib/hw/gatekeeper.beanpod.so
+vendor/lib/hw/libSoftGatekeeper.so
 vendor/lib64/hw/gatekeeper.beanpod.so
+vendor/lib64/hw/libSoftGatekeeper.so
 
 # GNSS
 vendor/bin/ipsec_mon
@@ -869,6 +882,156 @@ vendor/lib64/hw/android.hardware.gnss-impl-mediatek.so
 vendor/lib64/hw/android.hardware.gnss@2.1-impl-mediatek.so
 vendor/lib64/hw/gps.default.so
 vendor/lib64/libifcutils_mtk.so
+
+# GPS (certificates)
+vendor/etc/security/cacerts/01419da9.0
+vendor/etc/security/cacerts/04f60c28.0
+vendor/etc/security/cacerts/0d69c7e1.0
+vendor/etc/security/cacerts/10531352.0
+vendor/etc/security/cacerts/111e6273.0
+vendor/etc/security/cacerts/12d55845.0
+vendor/etc/security/cacerts/1ae85e5e.0
+vendor/etc/security/cacerts/1df5a75f.0
+vendor/etc/security/cacerts/1e1eab7c.0
+vendor/etc/security/cacerts/1e8e7201.0
+vendor/etc/security/cacerts/1eb37bdf.0
+vendor/etc/security/cacerts/1f58a078.0
+vendor/etc/security/cacerts/219d9499.0
+vendor/etc/security/cacerts/23f4c490.0
+vendor/etc/security/cacerts/27af790d.0
+vendor/etc/security/cacerts/2add47b6.0
+vendor/etc/security/cacerts/2d9dafe4.0
+vendor/etc/security/cacerts/2fa87019.0
+vendor/etc/security/cacerts/302904dd.0
+vendor/etc/security/cacerts/304d27c3.0
+vendor/etc/security/cacerts/31188b5e.0
+vendor/etc/security/cacerts/33ee480d.0
+vendor/etc/security/cacerts/343eb6cb.0
+vendor/etc/security/cacerts/35105088.0
+vendor/etc/security/cacerts/399e7759.0
+vendor/etc/security/cacerts/3ad48a91.0
+vendor/etc/security/cacerts/3c6676aa.0
+vendor/etc/security/cacerts/3c860d51.0
+vendor/etc/security/cacerts/3c899c73.0
+vendor/etc/security/cacerts/3c9a4d3b.0
+vendor/etc/security/cacerts/3e7271e8.0
+vendor/etc/security/cacerts/40dc992e.0
+vendor/etc/security/cacerts/455f1b52.0
+vendor/etc/security/cacerts/48a195d8.0
+vendor/etc/security/cacerts/4be590e0.0
+vendor/etc/security/cacerts/5046c355.0
+vendor/etc/security/cacerts/524d9b43.0
+vendor/etc/security/cacerts/52b525c7.0
+vendor/etc/security/cacerts/583d0756.0
+vendor/etc/security/cacerts/5a250ea7.0
+vendor/etc/security/cacerts/5a3f0ff8.0
+vendor/etc/security/cacerts/5acf816d.0
+vendor/etc/security/cacerts/5cf9d536.0
+vendor/etc/security/cacerts/5f47b495.0
+vendor/etc/security/cacerts/60afe812.0
+vendor/etc/security/cacerts/6187b673.0
+vendor/etc/security/cacerts/63a2c897.0
+vendor/etc/security/cacerts/69105f4f.0
+vendor/etc/security/cacerts/6b03dec0.0
+vendor/etc/security/cacerts/75680d2e.0
+vendor/etc/security/cacerts/76579174.0
+vendor/etc/security/cacerts/7892ad52.0
+vendor/etc/security/cacerts/7a7c655d.0
+vendor/etc/security/cacerts/7a819ef2.0
+vendor/etc/security/cacerts/7c302982.0
+vendor/etc/security/cacerts/81b9768f.0
+vendor/etc/security/cacerts/82223c44.0
+vendor/etc/security/cacerts/83e9984f.0
+vendor/etc/security/cacerts/85cde254.0
+vendor/etc/security/cacerts/86212b19.0
+vendor/etc/security/cacerts/869fbf79.0
+vendor/etc/security/cacerts/882de061.0
+vendor/etc/security/cacerts/88950faa.0
+vendor/etc/security/cacerts/89c02a45.0
+vendor/etc/security/cacerts/8d6437c3.0
+vendor/etc/security/cacerts/9282e51c.0
+vendor/etc/security/cacerts/9339512a.0
+vendor/etc/security/cacerts/9479c8c3.0
+vendor/etc/security/cacerts/9576d26b.0
+vendor/etc/security/cacerts/9591a472.0
+vendor/etc/security/cacerts/95aff9e3.0
+vendor/etc/security/cacerts/9685a493.0
+vendor/etc/security/cacerts/985c1f52.0
+vendor/etc/security/cacerts/9aef356c.0
+vendor/etc/security/cacerts/9d6523ce.0
+vendor/etc/security/cacerts/9f533518.0
+vendor/etc/security/cacerts/a2c66da8.0
+vendor/etc/security/cacerts/a3896b44.0
+vendor/etc/security/cacerts/a7605362.0
+vendor/etc/security/cacerts/a81e292b.0
+vendor/etc/security/cacerts/a9d40e02.0
+vendor/etc/security/cacerts/ab5346f4.0
+vendor/etc/security/cacerts/ab59055e.0
+vendor/etc/security/cacerts/aeb67534.0
+vendor/etc/security/cacerts/b0ed035a.0
+vendor/etc/security/cacerts/b0f3e76e.0
+vendor/etc/security/cacerts/b3fb433b.0
+vendor/etc/security/cacerts/b74d2bd5.0
+vendor/etc/security/cacerts/b7db1890.0
+vendor/etc/security/cacerts/b872f2b4.0
+vendor/etc/security/cacerts/b936d1c6.0
+vendor/etc/security/cacerts/bc3f2570.0
+vendor/etc/security/cacerts/bd43e1dd.0
+vendor/etc/security/cacerts/bdacca6f.0
+vendor/etc/security/cacerts/bf64f35b.0
+vendor/etc/security/cacerts/c2c1704e.0
+vendor/etc/security/cacerts/c491639e.0
+vendor/etc/security/cacerts/c51c224c.0
+vendor/etc/security/cacerts/c559d742.0
+vendor/etc/security/cacerts/c90bc37d.0
+vendor/etc/security/cacerts/cb156124.0
+vendor/etc/security/cacerts/cb1c3204.0
+vendor/etc/security/cacerts/ccc52f49.0
+vendor/etc/security/cacerts/cf701eeb.0
+vendor/etc/security/cacerts/d06393bb.0
+vendor/etc/security/cacerts/d0cddf45.0
+vendor/etc/security/cacerts/d16a5865.0
+vendor/etc/security/cacerts/d18e9066.0
+vendor/etc/security/cacerts/d39b0a2c.0
+vendor/etc/security/cacerts/d41b5e2a.0
+vendor/etc/security/cacerts/d4c339cb.0
+vendor/etc/security/cacerts/d59297b8.0
+vendor/etc/security/cacerts/d7746a63.0
+vendor/etc/security/cacerts/da7377f6.0
+vendor/etc/security/cacerts/dbc54cab.0
+vendor/etc/security/cacerts/dbff3a01.0
+vendor/etc/security/cacerts/dc99f41e.0
+vendor/etc/security/cacerts/dfc0fe80.0
+vendor/etc/security/cacerts/e442e424.0
+vendor/etc/security/cacerts/e48193cf.0
+vendor/etc/security/cacerts/e8651083.0
+vendor/etc/security/cacerts/ed39abd0.0
+vendor/etc/security/cacerts/edcbddb5.0
+vendor/etc/security/cacerts/f013ecaf.0
+vendor/etc/security/cacerts/f0cd152c.0
+vendor/etc/security/cacerts/f459871d.0
+vendor/etc/security/cacerts/fb5fa911.0
+vendor/etc/security/cacerts/fd08c599.0
+vendor/etc/security/cacerts/fde84897.0
+vendor/etc/security/cacerts_supl/111e6273.0
+vendor/etc/security/cacerts_supl/3ad48a91.0
+vendor/etc/security/cacerts_supl/7651b327.0
+vendor/etc/security/cacerts_supl/c542733d.0
+vendor/etc/security/cacerts_supl/cec771d5.0
+vendor/etc/security/cacerts_supl/f336e3d1.0
+vendor/etc/security/cacerts_supl/lab/18dc3a8d.0
+vendor/etc/security/cacerts_supl/lab/1bc5ca0c.0
+vendor/etc/security/cacerts_supl/lab/1bc5ca0c.1
+vendor/etc/security/cacerts_supl/lab/2cbfcc3a.0
+vendor/etc/security/cacerts_supl/lab/35ef1c14.0
+vendor/etc/security/cacerts_supl/lab/399e7759.0
+vendor/etc/security/cacerts_supl/lab/586933d9.0
+vendor/etc/security/cacerts_supl/lab/66272d0d.0
+vendor/etc/security/cacerts_supl/lab/6f1dbe5e.0
+vendor/etc/security/cacerts_supl/lab/b5805141.0
+vendor/etc/security/cacerts_supl/lab/b805b58a.0
+vendor/etc/security/cacerts_supl/lab/ed7b215e.0
+vendor/etc/security/cacerts_supl/lab/ef4b31e6.0
 
 # HotwordEnrollment
 -product/priv-app/HotwordEnrollmentOKGoogleRISCV/HotwordEnrollmentOKGoogleRISCV.apk
@@ -947,13 +1110,19 @@ vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.0.so
 vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.1.so
 vendor/lib64/wechat.beanpod.so
 
+# Listen
+vendor/lib/hw/sound_trigger.primary.default.so
+vendor/lib/libvow_ap_test_aa.so
+vendor/lib/libvow_ap_test_ha.so
+vendor/lib/libvow_ap_test_hh.so
+vendor/lib/libvow_ap_test_nn.so
+
 # Sensors
 vendor/etc/elliptic_sensor.xml
 vendor/lib64/hw/android.hardware.sensors@2.X-subhal-mediatek.so
 vendor/lib64/hw/sensors.elliptic.so
 vendor/lib64/hw/sensors.mt6893.so
 vendor/lib64/hw/sensors.touch.detect.so
-vendor/lib64/libhfmanager.so
 vendor/lib64/libhwm.so
 vendor/lib64/libksensor.so
 vendor/lib64/libnotifyaudiohal.so
@@ -971,9 +1140,19 @@ vendor/bin/teei_daemon
 vendor/etc/init/microtrust.rc
 vendor/etc/init/tee-supplicant.rc
 vendor/etc/init/vendor.microtrust.hardware.thh@2.0-service.rc
+vendor/lib/libTEECommon.so
+vendor/lib/libgz_gp_client.so
+vendor/lib/libgz_uree.so
 vendor/lib/libimsg_log.so
+vendor/lib/libteecli.so
+vendor/lib/libteeclientjni_isee.so
+vendor/lib/libteeclientjni_isee@1.1.so
+vendor/lib/libteei_daemon_vfs.so
+vendor/lib/libthha.so
 vendor/lib64/hw/kmsetkey.beanpod.so
 vendor/lib64/libTEECommon.so
+vendor/lib64/libgz_gp_client.so
+vendor/lib64/libgz_uree.so
 vendor/lib64/libimsg_log.so
 vendor/lib64/libteecli.so
 vendor/lib64/libteeclientjni_isee.so
@@ -1007,6 +1186,55 @@ vendor/thh/ta/d91f322ad5a441d5955110eda3272fc0.ta
 vendor/thh/ta/e5140b3376fa4c63ab18062caab2fb5c.ta
 vendor/thh/ta/e97c270ea5c44c58bcd3384a2fa2539e.ta
 vendor/thh/ta/isee_model.json
+
+# Media
+vendor/lib/AV1SecureVdecCA.so
+vendor/lib/AVCSecureVdecCA.so
+vendor/lib/HEVCSecureVdecCA.so
+vendor/lib/VP9SecureVdecCA.so
+vendor/lib/libadpcmdec_mtk.so
+vendor/lib/libdeccfg.so
+vendor/lib/libformatter.so
+vendor/lib/libgz_gp_client.so
+vendor/lib/libgz_uree.so
+vendor/lib/libh264dec_customize.so
+vendor/lib/libh264dec_sa.ca7.so
+vendor/lib/libh264dec_sd.ca7.so
+vendor/lib/libh264dec_se.ca7.so
+vendor/lib/libh264enc_sa.ca7.so
+vendor/lib/libjpeg-alpha-oal_vendor.so
+vendor/lib/libjpeg-alpha_vendor.so
+vendor/lib/libmp3dec_mtk.so
+vendor/lib/libmp4enc_sa.ca7.so
+vendor/lib/libmp4enc_xa.ca7.so
+vendor/lib/libstagefrighthw.so
+vendor/lib/libvcodec_oal.so
+vendor/lib/libvcodecdrv.so
+vendor/lib/libvp8dec_sa.ca7.so
+vendor/lib/libvp8enc_sa.ca7.so
+vendor/lib/libvp9dec_sa.ca7.so
+vendor/lib/mt6893/libmtk_drvb.so
+vendor/lib64/AV1SecureVdecCA.so
+vendor/lib64/AVCSecureVdecCA.so
+vendor/lib64/HEVCSecureVdecCA.so
+vendor/lib64/VP9SecureVdecCA.so
+vendor/lib64/libJpgEncPipe.so
+vendor/lib64/libNoFpsActor.so
+vendor/lib64/libSQLiteModule_VER_ALL.so
+vendor/lib64/libadpcmdec_mtk.so
+vendor/lib64/libalacdec_mtk.so
+vendor/lib64/libdeccfg.so
+vendor/lib64/libformatter.so
+vendor/lib64/libgz_gp_client.so
+vendor/lib64/libgz_uree.so
+vendor/lib64/libjpeg-alpha-oal_vendor.so
+vendor/lib64/libjpeg-alpha_vendor.so
+vendor/lib64/libstagefright_soft_ac4dec.so
+vendor/lib64/libstagefright_soft_ddpdec.so
+vendor/lib64/libstagefrighthw.so
+vendor/lib64/libvcodec_oal.so
+vendor/lib64/libvcodecdrv_header_stub.so
+vendor/lib64/mt6893/libmtk_drvb.so
 
 # Media (Codec2)
 vendor/lib/libcodec2_mtk_c2store.so
@@ -1046,21 +1274,6 @@ vendor/lib64/libMtkSpeechEnh.so
 # Media (PQ)
 vendor/bin/hw/vendor.mediatek.hardware.pq@2.2-service
 vendor/etc/init/vendor.mediatek.hardware.pq@2.2-service.rc
-vendor/lib/hw/vendor.mediatek.hardware.pq@2.13-impl.so
-vendor/lib/vendor.mediatek.hardware.pq@2.0.so
-vendor/lib/vendor.mediatek.hardware.pq@2.1.so
-vendor/lib/vendor.mediatek.hardware.pq@2.10.so
-vendor/lib/vendor.mediatek.hardware.pq@2.11.so
-vendor/lib/vendor.mediatek.hardware.pq@2.12.so
-vendor/lib/vendor.mediatek.hardware.pq@2.13.so
-vendor/lib/vendor.mediatek.hardware.pq@2.2.so
-vendor/lib/vendor.mediatek.hardware.pq@2.3.so
-vendor/lib/vendor.mediatek.hardware.pq@2.4.so
-vendor/lib/vendor.mediatek.hardware.pq@2.5.so
-vendor/lib/vendor.mediatek.hardware.pq@2.6.so
-vendor/lib/vendor.mediatek.hardware.pq@2.7.so
-vendor/lib/vendor.mediatek.hardware.pq@2.8.so
-vendor/lib/vendor.mediatek.hardware.pq@2.9.so
 vendor/lib64/hw/vendor.mediatek.hardware.pq@2.13-impl.so
 vendor/lib64/libaal_mtk.so
 vendor/lib64/libaispq.so
@@ -1088,10 +1301,26 @@ vendor/lib64/vendor.mediatek.hardware.pq@2.9.so
 vendor/bin/hw/android.hardware.neuralnetworks@1.3-service-mtk-neuron
 vendor/etc/init/android.hardware.neuralnetworks@1.3-service-mtk-neuron.rc
 -vendor/etc/vintf/manifest/android.hardware.neuralnetworks@1.3-service-mtk-mdla-dsp-gpu.xml
+vendor/lib/libapu_mdw.so
+vendor/lib/libapu_mdw_batch.so
+vendor/lib/libapusys.so
+vendor/lib/libapusys_edma.so
 vendor/lib/mt6893/libaiselector.so
 vendor/lib/mt6893/libdpframework.so
+vendor/lib/vendor.mediatek.hardware.apuware.utils@2.0.so
+vendor/lib64/APUWareApusysServer.so
+vendor/lib64/APUWareHmpServer.so
+vendor/lib64/APUWareUtilsServer.so
+vendor/lib64/APUWareXrpServer_v2.so
+vendor/lib64/libapu_mdw.so
+vendor/lib64/libapu_mdw_batch.so
+vendor/lib64/libapusys.so
+vendor/lib64/libapusys_edma.so
+vendor/lib64/libcmdl.so
+vendor/lib64/libcmdl_ndk.mtk.vndk.so
 vendor/lib64/libneuron_adapter.so
 vendor/lib64/libneuron_graph_delegate.mtk.so
+vendor/lib64/libneuron_platform.so
 vendor/lib64/libneuron_wrapper.so
 vendor/lib64/libneuropilot_hal_utils.so
 vendor/lib64/libnir_neon_driver_ndk.mtk.vndk.so
@@ -1102,9 +1331,15 @@ vendor/lib64/mt6893/libgpudataproducer.so
 vendor/lib64/mt6893/libmcv_runtime.mtk.so
 vendor/lib64/mt6893/libmdla_ut.so
 vendor/lib64/mt6893/libmnl.so
+vendor/lib64/mt6893/libneuron_platform.vpu.so
 vendor/lib64/mt6893/libneuron_runtime.5.so
 vendor/lib64/mt6893/libneuron_runtime.so
 vendor/lib64/mt6893/libnir_neon_driver.so
+vendor/lib64/vendor.mediatek.hardware.apuware.apusys@2.0.so
+vendor/lib64/vendor.mediatek.hardware.apuware.apusys@2.1.so
+vendor/lib64/vendor.mediatek.hardware.apuware.hmp@1.0.so
+vendor/lib64/vendor.mediatek.hardware.apuware.utils@2.0.so
+vendor/lib64/vendor.mediatek.hardware.apuware.xrp@2.0.so
 
 # NVRAM
 vendor/bin/hw/vendor.mediatek.hardware.nvram@1.1-service
@@ -1122,6 +1357,8 @@ vendor/lib64/vendor.mediatek.hardware.nvram@1.1.so
 vendor/bin/hw/android.hardware.nfc@1.2-service-st
 vendor/bin/nfcstackp-vendor
 vendor/etc/init/android.hardware.nfc@1.2-service-st.rc
+vendor/firmware/st21nfc_fw.bin
+vendor/firmware/st21nfc_fw7.bin
 vendor/lib64/libfile_op.so
 vendor/lib64/libnxp_extamp_intf.so
 vendor/lib64/nfc_nci.st21nfc.st.so
@@ -1134,12 +1371,14 @@ vendor/etc/init/vendor.mediatek.hardware.mtkpower@1.0-init.rc
 vendor/etc/init/vendor.mediatek.hardware.mtkpower@1.0-service.rc
 vendor/lib/hw/vendor.mediatek.hardware.mtkpower@1.2-impl.so
 vendor/lib/libmtkperf_client_vendor.so
+-vendor/lib/libpowerhal.so
+vendor/lib/libpowerhalwrap_vendor.so
 vendor/lib64/hw/vendor.mediatek.hardware.mtkpower@1.2-impl.so
 vendor/lib64/libmtkperf_client_vendor.so
 vendor/lib64/libperfctl_vendor.so
 vendor/lib64/libpixelflinger.so
 vendor/lib64/libpower_timer.so
-vendor/lib64/libpowerhal.so
+-vendor/lib64/libpowerhal.so
 vendor/lib64/libpowerhalwrap_vendor.so
 vendor/lib64/vendor.mediatek.hardware.power@2.0.so
 
@@ -1178,7 +1417,9 @@ vendor/etc/virtual-spn-conf-by-efpnn.xml
 vendor/etc/virtual-spn-conf-by-efspn.xml
 vendor/etc/virtual-spn-conf-by-imsi.xml
 vendor/firmware/conninfra.cfg
+vendor/lib/libnwk_opt_halwrap_vendor.so
 vendor/lib/libsysenv.so
+vendor/lib/vendor.mediatek.hardware.nwk_opt@1.0.so
 vendor/lib/vendor.mediatek.hardware.rcs@2.0.so
 vendor/lib64/libasn1c_core.so
 vendor/lib64/libasn1c_mapi.so
@@ -1259,6 +1500,7 @@ vendor/etc/init/android.hardware.usb@1.2-service-mediatekv2.rc
 -vendor/etc/vintf/manifest/android.hardware.usb@1.2-service-mediatekv2.xml
 
 # Thermal
+vendor/bin/hw/android.hardware.thermal@2.0-service.mtk
 vendor/bin/mi_thermald
 vendor/bin/thermal
 vendor/bin/thermal_core
@@ -1267,6 +1509,7 @@ vendor/bin/thermal_manager
 vendor/bin/thermalloadalgod
 vendor/etc/.tp/.thermal_policy_08
 vendor/etc/.tp/thermal.conf
+vendor/etc/init/android.hardware.thermal@2.0-service.mtk.rc
 vendor/etc/init/init.thermal.rc
 vendor/etc/init/init.thermal_core.rc
 vendor/etc/init/init.thermal_manager.rc
@@ -1293,7 +1536,9 @@ vendor/etc/thermal-region-map.conf
 vendor/etc/thermal-tgame.conf
 vendor/etc/thermal-video.conf
 vendor/etc/thermald-devices.conf
+vendor/lib/libmtcloader.so
 vendor/lib/libthermalalgo.so
+vendor/lib64/hw/android.hardware.thermal@2.0-impl.so
 vendor/lib64/hw/thermal_hal.so
 vendor/lib64/libmtcloader.so
 
