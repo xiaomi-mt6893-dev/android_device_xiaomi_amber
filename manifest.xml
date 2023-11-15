@@ -42,7 +42,7 @@
     <hal format="hidl">
         <name>android.hardware.graphics.composer</name>
         <transport>hwbinder</transport>
-        <fqname>@2.1::IComposer/default</fqname>
+        <fqname>@2.3::IComposer/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.graphics.mapper</name>
@@ -135,11 +135,6 @@
         <fqname>@2.0::IThermal/default</fqname>
     </hal>
     <hal format="hidl">
-        <name>vendor.mediatek.hardware.apmonitor</name>
-        <transport>hwbinder</transport>
-        <fqname>@2.0::IApmService/apm_hidl_service</fqname>
-    </hal>
-    <hal format="hidl">
         <name>vendor.mediatek.hardware.apuware.apusys</name>
         <transport>hwbinder</transport>
         <fqname>@2.1::INeuronApusys/default</fqname>
@@ -153,11 +148,6 @@
         <name>vendor.mediatek.hardware.apuware.xrp</name>
         <transport>hwbinder</transport>
         <fqname>@2.0::INeuronXrp/default</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.mediatek.hardware.atci</name>
-        <transport>hwbinder</transport>
-        <fqname>@1.0::IAtcid/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.mediatek.hardware.bluetooth.audio</name>
@@ -178,35 +168,6 @@
         <name>vendor.mediatek.hardware.composer_ext</name>
         <transport>hwbinder</transport>
         <fqname>@1.0::IComposerExt/default</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.mediatek.hardware.dmc</name>
-        <transport>hwbinder</transport>
-        <fqname>@1.2::IDmcService/dmc_hidl_service</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.mediatek.hardware.engineermode</name>
-        <transport>hwbinder</transport>
-        <fqname>@1.3::IEmd/EmHidlServer</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.mediatek.hardware.keymaster_attestation</name>
-        <transport>hwbinder</transport>
-        <fqname>@1.1::IKeymasterDevice/default</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.mediatek.hardware.log</name>
-        <transport>hwbinder</transport>
-        <fqname>@1.0::ILog/ATMWiFiHidlServer</fqname>
-        <fqname>@1.0::ILog/ConnsysFWHidlServer</fqname>
-        <fqname>@1.0::ILog/LoggerHidlServer</fqname>
-        <fqname>@1.0::ILog/MobileLogHidlServer</fqname>
-        <fqname>@1.0::ILog/ModemLogHidlServer</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.mediatek.hardware.mdmonitor</name>
-        <transport>hwbinder</transport>
-        <fqname>@1.0::IMDMonitorService/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.mediatek.hardware.mmagent</name>
@@ -265,6 +226,11 @@
         <name>vendor.mediatek.hardware.videotelephony</name>
         <transport>hwbinder</transport>
         <fqname>@1.0::IVideoTelephony/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.microtrust.hardware.thh</name>
+        <transport>hwbinder</transport>
+        <fqname>@2.0::IThhDevice/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.xiaomi.hardware.citsensorservice</name>
