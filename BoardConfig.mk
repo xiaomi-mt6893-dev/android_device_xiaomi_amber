@@ -52,29 +52,27 @@ BOARD_DTB_OFFSET := 0x07c08000
 BOARD_RAMDISK_OFFSET := 0x11088000
 BOARD_KERNEL_TAGS_OFFSET := 0x07c08000
 
-BOARD_INCLUDE_DTB_IN_BOOTIMG := true
-
 BOARD_KERNEL_CMDLINE := \
     androidboot.init_fatal_reboot_target=recovery \
     androidboot.selinux=permissive \
     bootopt=64S3,32N2,64N2
 
-BOARD_MKBOOTIMG_ARGS += \
-    --base $(BOARD_KERNEL_BASE) \
-    --dtb_offset $(BOARD_DTB_OFFSET) \
-    --header_version $(BOARD_BOOTIMG_HEADER_VERSION) \
-    --ramdisk_offset $(BOARD_RAMDISK_OFFSET) \
-    --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
-
-# kernel
-BOARD_KERNEL_IMAGE_NAME := Image
-BOARD_KERNEL_SEPARATED_DTBO := true
-TARGET_KERNEL_SOURCE := $(DEVICE_PATH)/prebuilts/kernel-headers
-
-TARGET_NO_KERNEL_OVERRIDE := true
 TARGET_FORCE_PREBUILT_KERNEL := true
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilts/kernel
+TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilts/dtb.img
 BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilts/dtbo.img
-BOARD_PREBUILT_DTBIMAGE_DIR := $(DEVICE_PATH)/prebuilts/dtb
+BOARD_VENDOR_KERNEL_MODULES := $(wildcard $(DEVICE_PATH)/prebuilts/vendor-modules/*.ko)
+
+BOARD_MKBOOTIMG_ARGS := --base $(BOARD_KERNEL_BASE)
+BOARD_MKBOOTIMG_ARGS += --dtb_offset $(BOARD_DTB_OFFSET)
+BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
+BOARD_MKBOOTIMG_ARGS += --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
+BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
+BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
+
+BOARD_KERNEL_IMAGE_NAME := Image
+TARGET_KERNEL_CONFIG := amber_user_defconfig
+TARGET_KERNEL_SOURCE := $(DEVICE_PATH)/prebuilts/kernel-headers
 
 # Partitions
 BOARD_USES_METADATA_PARTITION := true
