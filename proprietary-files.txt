@@ -757,7 +757,6 @@ vendor/lib/hw/mt6893/android.hardware.graphics.allocator@4.0-impl-mediatek.so
 vendor/lib/hw/mt6893/android.hardware.graphics.mapper@4.0-impl-mediatek.so
 vendor/lib/hw/mt6893/vulkan.mali.so
 vendor/lib/hw/vendor.mediatek.hardware.mms@1.6-impl.so
-vendor/lib/hw/gralloc.default.so
 vendor/lib/libDefaultFpsActor.so
 vendor/lib/libFrameRecord.so
 vendor/lib/libNoFpsActor.so
@@ -797,7 +796,6 @@ vendor/lib64/hw/mt6893/android.hardware.graphics.allocator@4.0-impl-mediatek.so
 vendor/lib64/hw/mt6893/android.hardware.graphics.mapper@4.0-impl-mediatek.so
 vendor/lib64/hw/mt6893/vulkan.mali.so
 vendor/lib64/hw/vendor.mediatek.hardware.mms@1.6-impl.so
-vendor/lib64/hw/gralloc.default.so
 vendor/lib64/libDefaultFpsActor.so
 vendor/lib64/libFrameRecord.so
 vendor/lib64/libNoFpsActor.so
