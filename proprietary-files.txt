@@ -893,6 +893,11 @@ vendor/firmware/novatek_ts_fw_tm.bin
 # Display configs
 vendor/etc/mdss_dsi_k11t_42_02_0a_dsc_cmd_mi.xml
 
+# Dumpstate
+vendor/bin/hw/android.hardware.dumpstate@1.1-service.xiaomi
+vendor/etc/init/android.hardware.dumpstate@1.1-service.xiaomi.rc
+-vendor/etc/vintf/manifest/android.hardware.dumpstate@1.1-service.xiaomi.xml
+
 # DRM
 vendor/bin/hw/android.hardware.drm@1.4-service.widevine
 vendor/etc/init/android.hardware.drm@1.4-service.widevine.rc
