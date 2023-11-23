@@ -87,6 +87,10 @@ PRODUCT_PACKAGES += \
     libtextclassifier_hash.vendor:64 \
     libmemunreachable.vendor:64 \
 
+# Cas
+PRODUCT_PACKAGES += \
+    android.hardware.cas@1.2-service-lazy
+
 # ConsumerIr
 PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl \
@@ -332,9 +336,6 @@ PRODUCT_PACKAGES += \
     init.sensor_2_0.rc \
     init.stnfc.rc \
     ueventd.mt6893.rc
-
-PRODUCT_PACKAGES_ENG += \
-    init.debug.rc
 
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 30
