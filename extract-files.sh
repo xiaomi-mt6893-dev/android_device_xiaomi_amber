@@ -24,23 +24,6 @@ if [ ! -f "${HELPER}" ]; then
 fi
 source "${HELPER}"
 
-function blob_fixup {
-    case "$1" in
-        system/lib64/libsink.so)
-            "${PATCHELF}" --add-needed "libshim_sink.so" "${2}"
-            ;;
-        vendor/lib*/hw/vendor.mediatek.hardware.pq@2.13-impl.so)
-            "$PATCHELF" --replace-needed "libutils.so" "libutils-v32.so" "$2"
-            ;;
-        vendor/lib*/libmtkcam_stdutils.so)
-            "$PATCHELF" --replace-needed "libutils.so" "libutils-v32.so" "$2"
-            ;;
-        vendor/lib*/libudf.so)
-            "$PATCHELF" --replace-needed "libunwindstack.so" "libunwindstack-v32.so" "$2"
-            ;;
-    esac
-}
-
 # Default to sanitizing the vendor folder before extraction
 CLEAN_VENDOR=true
 
@@ -69,6 +52,23 @@ done
 if [ -z "${SRC}" ]; then
     SRC="adb"
 fi
+
+function blob_fixup {
+    case "$1" in
+        system/lib64/libsink.so)
+            "${PATCHELF}" --add-needed "libshim_sink.so" "${2}"
+            ;;
+        vendor/lib*/hw/vendor.mediatek.hardware.pq@2.13-impl.so)
+            "$PATCHELF" --replace-needed "libutils.so" "libutils-v32.so" "$2"
+            ;;
+        vendor/lib*/libmtkcam_stdutils.so)
+            "$PATCHELF" --replace-needed "libutils.so" "libutils-v32.so" "$2"
+            ;;
+        vendor/lib*/libudf.so)
+            "$PATCHELF" --replace-needed "libunwindstack.so" "libunwindstack-v32.so" "$2"
+            ;;
+    esac
+}
 
 # Initialize the helper
 setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false "${CLEAN_VENDOR}"
