@@ -197,6 +197,9 @@ PRODUCT_PACKAGES += \
 
 # Media
 PRODUCT_PACKAGES += \
+    android.hardware.media.c2@1.0.vendor \
+    android.hardware.media.c2@1.1.vendor \
+    android.hardware.media.c2@1.2.vendor \
     libcodec2_hidl@1.2.vendor \
     libavservices_minijail_vendor \
     libstagefright_softomx_plugin.vendor \
