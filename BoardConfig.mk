@@ -97,6 +97,7 @@ TARGET_COPY_OUT_SYSTEM_EXT := system_ext
 # Platform
 BOARD_HAS_MTK_HARDWARE := true
 TARGET_BOARD_PLATFORM := mt6893
+BOARD_VENDOR := xiaomi
 
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
