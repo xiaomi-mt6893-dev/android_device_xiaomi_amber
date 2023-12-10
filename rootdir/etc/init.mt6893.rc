@@ -10,7 +10,7 @@ on early-init
     write /proc/perfmgr/boost_ctrl/cpu_ctrl/boot_freq "5 0 0 0 3 3"
     write /sys/devices/platform/boot_dramboost/dramboost/dramboost 1
 
-       setprop vendor.all.modules.ready 0
+       setprop vendor.all.modules.ready 1
 
 on init
 
