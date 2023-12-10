@@ -31,6 +31,8 @@ $(VENDOR_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@ln -sf mt6893/libmtk_drvb.so $(TARGET_OUT_VENDOR)/lib64/libmtk_drvb.so
 	@ln -sf mt6893/libaiselector.so $(TARGET_OUT_VENDOR)/lib/libaiselector.so
 	@ln -sf mt6893/libaiselector.so $(TARGET_OUT_VENDOR)/lib64/libaiselector.so
+	@ln -sf mt6893/libdpframework.so $(TARGET_OUT_VENDOR)/lib/libdpframework.so
+	@ln -sf mt6893/libdpframework.so $(TARGET_OUT_VENDOR)/lib64/libdpframework.so
 	@ln -sf mt6893/libgpudataproducer.so $(TARGET_OUT_VENDOR)/lib/libgpudataproducer.so
 	@ln -sf mt6893/libgpudataproducer.so $(TARGET_OUT_VENDOR)/lib64/libgpudataproducer.so
 	@ln -sf mt6893/libnir_neon_driver.so $(TARGET_OUT_VENDOR)/lib/libnir_neon_driver.so
