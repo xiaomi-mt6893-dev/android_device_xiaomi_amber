@@ -5,8 +5,6 @@
 //
 
 runtime_resource_overlay {
-    name: "FrameworksResOverlay",
-    sdk_version: "current",
+    name: "FrameworksResOverlayAmber",
     vendor: true,
-    resource_dirs: ["res"]
 }

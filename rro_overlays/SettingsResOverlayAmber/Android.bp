@@ -4,8 +4,6 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 runtime_resource_overlay {
-    name: "SettingsProviderOverlay",
-    sdk_version: "current",
+    name: "SettingsResOverlayAmber",
     vendor: true,
-    resource_dirs: ["res"]
 }

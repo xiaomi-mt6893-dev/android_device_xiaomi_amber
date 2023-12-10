@@ -246,12 +246,11 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
-    CarrierConfigOverlay \
-    PhoneOverlay \
-    WifiResOverlay \
-    FrameworksResOverlay \
-    SettingsProviderOverlay \
-    SettingsResOverlay \
+    SettingsResOverlayAmber \
+    WifiOverlay \
+    CarrierConfigOverlayAmber \
+    FrameworksResOverlayAmber \
+    TelephonyResOverlayAmber
 
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay-lineage
