@@ -165,7 +165,7 @@ ro.vendor.mtk_agps_app=1
 ro.vendor.mtk_gps_support=1
 ro.vendor.mtk_log_hide_gps=0
 
-# IMS (IP Multimedia Subsystem)
+# IMS
 persist.vendor.anr.enhancement=0
 persist.vendor.ims_support=1
 persist.vendor.mtk.volte.enable=1

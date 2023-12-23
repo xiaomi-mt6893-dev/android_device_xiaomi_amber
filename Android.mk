@@ -38,6 +38,8 @@ $(VENDOR_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@ln -sf $(TARGET_BOARD_PLATFORM)/arm.graphics-V1-ndk_platform.so $(TARGET_OUT_VENDOR)/lib/arm.graphics-V1-ndk_platform.so
 	@ln -sf /vendor/lib/egl/libGLES_mali.so $(TARGET_OUT_VENDOR)/lib/hw/vulkan.mt6893.so
 	@ln -sf $(TARGET_BOARD_PLATFORM)/libGLES_mali.so $(TARGET_OUT_VENDOR)/lib64/egl/libGLES_mali.so
+	@ln -sf $(TARGET_BOARD_PLATFORM)/android.hardware.graphics.allocator@4.0-impl-mediatek.so $(TARGET_OUT_VENDOR)/lib64/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so
+	@ln -sf $(TARGET_BOARD_PLATFORM)/android.hardware.graphics.mapper@4.0-impl-mediatek.so $(TARGET_OUT_VENDOR)/lib64/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so
 	@ln -sf $(TARGET_BOARD_PLATFORM)/vulkan.mali.so $(TARGET_OUT_VENDOR)/lib64/hw/vulkan.mali.so
 	@ln -sf $(TARGET_BOARD_PLATFORM)/libaiselector.so $(TARGET_OUT_VENDOR)/lib64/libaiselector.so
 	@ln -sf $(TARGET_BOARD_PLATFORM)/libdpframework.so $(TARGET_OUT_VENDOR)/lib64/libdpframework.so
@@ -47,12 +49,10 @@ $(VENDOR_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@ln -sf $(TARGET_BOARD_PLATFORM)/libneuron_platform.vpu.so $(TARGET_OUT_VENDOR)/lib64/libneuron_platform.vpu.so
 	@ln -sf $(TARGET_BOARD_PLATFORM)/libneuron_runtime.5.so $(TARGET_OUT_VENDOR)/lib64/libneuron_runtime.5.so
 	@ln -sf $(TARGET_BOARD_PLATFORM)/libneuron_runtime.so $(TARGET_OUT_VENDOR)/lib64/libneuron_runtime.so
-	@ln -sf $(TARGET_BOARD_PLATFORM)/android.hardware.graphics.allocator@4.0-impl-mediatek.so $(TARGET_OUT_VENDOR)/lib64/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so
-	@ln -sf $(TARGET_BOARD_PLATFORM)/android.hardware.graphics.mapper@4.0-impl-mediatek.so $(TARGET_OUT_VENDOR)/lib64/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so
+	@ln -sf $(TARGET_BOARD_PLATFORM)/libgpudataproducer.so $(TARGET_OUT_VENDOR)/lib64/libgpudataproducer.so
 	@ln -sf $(TARGET_BOARD_PLATFORM)/arm.graphics-ndk_platform.so $(TARGET_OUT_VENDOR)/lib64/arm.graphics-ndk_platform.so
 	@ln -sf $(TARGET_BOARD_PLATFORM)/arm.graphics-V1-ndk_platform.so $(TARGET_OUT_VENDOR)/lib64/arm.graphics-V1-ndk_platform.so
 	@ln -sf $(TARGET_BOARD_PLATFORM)/libmcv_runtime.mtk.so $(TARGET_OUT_VENDOR)/lib64/libmcv_runtime.mtk.so
-	@ln -sf $(TARGET_BOARD_PLATFORM)/libgpudataproducer.so $(TARGET_OUT_VENDOR)/lib64/libgpudataproducer.so
 	@ln -sf $(TARGET_BOARD_PLATFORM)/libDR.so $(TARGET_OUT_VENDOR)/lib64/libDR.so
 	@ln -sf $(TARGET_BOARD_PLATFORM)/libmnl.so $(TARGET_OUT_VENDOR)/lib64/libmnl.so
 	@ln -sf /vendor/lib64/egl/libGLES_mali.so $(TARGET_OUT_VENDOR)/lib64/hw/vulkan.mt6893.so

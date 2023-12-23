@@ -799,20 +799,7 @@ vendor/lib64/vendor.mediatek.hardware.camera.security@1.0.so
 
 # Charger
 vendor/bin/batterysecret
-vendor/bin/smartcharging
 vendor/etc/init/init.batterysecret.rc
-vendor/etc/init/smartcharging_init.rc
-vendor/lib64/libsmartcharging.so
-
-# CIT
-vendor/bin/hw/vendor.xiaomi.hardware.citsensorservice@1.1-service
-vendor/etc/init/vendor.xiaomi.hardware.citsensorservice@1.1-service.rc
-vendor/lib64/hw/vendor.xiaomi.hardware.citsensorservice@1.1-impl.so
-vendor/lib64/libhfmanager.so
-vendor/lib64/libhfmanagerwrapper.so
-vendor/lib64/libssccalapi.so
-vendor/lib64/vendor.xiaomi.hardware.citsensorservice@1.0.so
-vendor/lib64/vendor.xiaomi.hardware.citsensorservice@1.1.so
 
 # Connectivity
 vendor/bin/conninfra_loader
@@ -949,6 +936,7 @@ vendor/firmware/novatek_ts_fw_tm.bin
 vendor/firmware/valhall-1691526.wa
 
 # Display configs
+vendor/etc/cust_color.xml
 vendor/etc/mdss_dsi_k11t_42_02_0a_dsc_cmd_mi.xml
 
 # DRM
@@ -966,6 +954,7 @@ vendor/lib64/mediadrm/libwvdrmengine.so
 # Fingerprint
 vendor/bin/hw/mfp-daemon
 -vendor/etc/vintf/manifest/fod.xml
+vendor/firmware/168_fingerprintRecord_RTP.bin
 vendor/lib64/com.fingerprints.extension@3.0.so
 vendor/lib64/hw/fingerprint.fpc_isee.so:vendor/lib64/hw/fingerprint.fpc_isee.default.so
 vendor/lib64/hw/fingerprint.goodix.so:vendor/lib64/hw/fingerprint.goodix.default.so
@@ -1172,17 +1161,6 @@ vendor/lib64/vendor.mediatek.hardware.apuware.hmp@1.0.so
 vendor/lib64/vendor.mediatek.hardware.apuware.utils@2.0.so
 vendor/lib64/vendor.mediatek.hardware.apuware.xrp@2.0.so
 
-# NFC
-vendor/bin/hw/android.hardware.nfc@1.2-service-st
-vendor/bin/nfcstackp-vendor
-vendor/etc/init/android.hardware.nfc@1.2-service-st.rc
-vendor/etc/st21nfc_conf.txt:vendor/firmware/st21nfc_conf.txt
-vendor/firmware/st21nfc_fw.bin
-vendor/firmware/st21nfc_fw7.bin
-vendor/lib64/libfile_op.so
-vendor/lib64/libnxp_extamp_intf.so
-vendor/lib64/nfc_nci.st21nfc.st.so
-
 # NVRAM
 vendor/bin/hw/vendor.mediatek.hardware.nvram@1.1-service
 vendor/bin/nvram_daemon
@@ -1209,6 +1187,9 @@ vendor/etc/init/bootperf.rc
 vendor/etc/init/init.fpsgo.rc
 vendor/etc/init/vendor.mediatek.hardware.mtkpower@1.0-init.rc
 vendor/etc/init/vendor.mediatek.hardware.mtkpower@1.0-service.rc
+vendor/etc/power_app_cfg.xml
+vendor/etc/powercontable.xml
+vendor/etc/powerscntbl.xml
 vendor/lib/libmtkperf_client_vendor.so
 vendor/lib64/hw/vendor.mediatek.hardware.mtkpower@1.2-impl.so
 vendor/lib64/libmtkperf_client_vendor.so
@@ -1308,6 +1289,16 @@ vendor/lib64/libksensor.so
 vendor/lib64/libnotifyaudiohal.so
 vendor/lib64/libsensor_custom.so
 vendor/lib64/libssccalapi.so
+
+# Sensors (citsensor)
+vendor/bin/hw/vendor.xiaomi.hardware.citsensorservice@1.1-service
+vendor/etc/init/vendor.xiaomi.hardware.citsensorservice@1.1-service.rc
+vendor/lib64/hw/vendor.xiaomi.hardware.citsensorservice@1.1-impl.so
+vendor/lib64/libhfmanager.so
+vendor/lib64/libhfmanagerwrapper.so
+vendor/lib64/libssccalapi.so
+vendor/lib64/vendor.xiaomi.hardware.citsensorservice@1.0.so
+vendor/lib64/vendor.xiaomi.hardware.citsensorservice@1.1.so
 
 # TEE
 vendor/bin/hw/vendor.microtrust.hardware.thh@2.0-service

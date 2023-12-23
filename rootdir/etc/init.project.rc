@@ -1,13 +1,5 @@
 # MTK project .rc configure
-import /vendor/etc/init/hw/vendor.mi.secure_element@1.0-service.rc
-import /vendor/etc/init/hw/vendor.mi.secure_element@1.2-service.rc
-import /vendor/etc/init/hw/init.mi_thermald.rc
-import /vendor/etc/init/hw/init.stnfc.rc
-import /product/etc/init/hw/init.stnfc.rc
-
 import /vendor/etc/init/init.batterysecret.rc
-import /vendor/etc/init/init.charge_logger.rc
-import /vendor/etc/init/init.mishow.ctl.rc
 
 on init
     mkdir /mnt/media_rw/usbotg 0700 media_rw media_rw

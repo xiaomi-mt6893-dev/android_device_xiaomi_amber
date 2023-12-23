@@ -1110,7 +1110,7 @@ service mi_thermald /system/vendor/bin/mi_thermald
     class main
     user root
     group system
-    seclabel u:r:mi_thermald:s0
+    #seclabel u:r:mi_thermald:s0
 
 # Logger
 service boot_log /system/bin/logcat -b all -D -f /cache/boot_log_full.txt
