@@ -5,7 +5,6 @@ vendor/lib/libaedv.so
 vendor/lib64/libaedv.so
 
 # Audio
-vendor/etc/aurisys_config.xml
 vendor/etc/aurisys_config_hifi3.xml
 vendor/etc/aurisys_param/FV-SAM-MTKXX.dat
 vendor/etc/aurisys_param/Speech_AudioParam.xml
