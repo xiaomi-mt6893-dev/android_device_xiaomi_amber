@@ -80,16 +80,6 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.device@3.6.vendor:64 \
     android.hardware.camera.provider@2.6.vendor:64
 
-PRODUCT_PACKAGES += \
-    libcamera2ndk_vendor:64 \
-    libflatbuffers-cpp.vendor:64 \
-    libpcap.vendor:64 \
-    libprotobuf-cpp-full.vendor:64 \
-    libprotobuf-cpp-lite.vendor:64 \
-    libruy.vendor:64 \
-    libtextclassifier_hash.vendor:64 \
-    libmemunreachable.vendor:64 \
-
 # Cas
 PRODUCT_PACKAGES += \
     android.hardware.cas@1.2-service-lazy
