@@ -80,10 +80,6 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.device@3.6.vendor:64 \
     android.hardware.camera.provider@2.6.vendor:64
 
-# Cas
-PRODUCT_PACKAGES += \
-    android.hardware.cas@1.2-service-lazy
-
 # ConsumerIr
 PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl \
