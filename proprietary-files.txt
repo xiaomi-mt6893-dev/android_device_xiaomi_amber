@@ -208,7 +208,6 @@ vendor/bin/lib3a.ccu.ddr
 vendor/bin/lib3a.ccu.dm
 vendor/bin/lib3a.ccu.pm
 vendor/bin/vpud
-vendor/firmware/lib3a.ccu
 vendor/etc/camera/CFR_para_HD.bin
 vendor/etc/camera/CFR_para_M.bin
 vendor/etc/camera/CFR_para_T.bin
@@ -263,6 +262,7 @@ vendor/etc/camera/xiaomi/thirdpartysnapshot.json
 vendor/etc/camera/xiaomi/uwsuperlowlightshot.json
 vendor/etc/init/camerahalserver.rc
 vendor/etc/init/vpud.rc
+vendor/firmware/lib3a.ccu
 vendor/lib/libvpu.so
 vendor/lib/libvpu5.so
 vendor/lib/libvpud_vcodec.so
@@ -326,8 +326,6 @@ vendor/lib64/libCamera_agateimx355mipiraw_HDR_Scene_Capture_Zoom2.so
 vendor/lib64/libCamera_agateimx355mipiraw_HDR_Scene_Capture_Zoom3.so
 vendor/lib64/libCamera_agateimx355mipiraw_LLHDR_Face_Capture.so
 vendor/lib64/libCamera_agateimx355mipiraw_LLHDR_Scene_Capture.so
-vendor/lib64/libCamera_agateimx355mipiraw_portrait_capture_full.so
-vendor/lib64/libCamera_agateimx355mipiraw_portrait_preview_full.so
 vendor/lib64/libCamera_agateimx355mipiraw_Professional_Capture.so
 vendor/lib64/libCamera_agateimx355mipiraw_Professional_Preview.so
 vendor/lib64/libCamera_agateimx355mipiraw_QQWechat_VideoCall.so
@@ -349,6 +347,8 @@ vendor/lib64/libCamera_agateimx355mipiraw_Video_720P.so
 vendor/lib64/libCamera_agateimx355mipiraw_Video_720P_Zoom1.so
 vendor/lib64/libCamera_agateimx355mipiraw_Video_720P_Zoom2.so
 vendor/lib64/libCamera_agateimx355mipiraw_Video_720P_Zoom3.so
+vendor/lib64/libCamera_agateimx355mipiraw_portrait_capture_full.so
+vendor/lib64/libCamera_agateimx355mipiraw_portrait_preview_full.so
 vendor/lib64/libCamera_agateov16a1qmipiraw_3rd_Capture.so
 vendor/lib64/libCamera_agateov16a1qmipiraw_3rd_Preview.so
 vendor/lib64/libCamera_agateov16a1qmipiraw_3rd_Video.so
@@ -398,19 +398,17 @@ vendor/lib64/libCamera_agateov64b40mipiraw_HDR_Scene_Capture_Zoom2.so
 vendor/lib64/libCamera_agateov64b40mipiraw_LLHDR_Face_Capture.so
 vendor/lib64/libCamera_agateov64b40mipiraw_LLHDR_Scene_Capture.so
 vendor/lib64/libCamera_agateov64b40mipiraw_Panorama_Capture.so
-vendor/lib64/libCamera_agateov64b40mipiraw_portrait_capture_full.so
-vendor/lib64/libCamera_agateov64b40mipiraw_portrait_preview_full.so
 vendor/lib64/libCamera_agateov64b40mipiraw_QQ_Preview.so
 vendor/lib64/libCamera_agateov64b40mipiraw_Scene_Capture.so
 vendor/lib64/libCamera_agateov64b40mipiraw_Scene_Capture_64M.so
 vendor/lib64/libCamera_agateov64b40mipiraw_Scene_Capture_CE.so
-vendor/lib64/libCamera_agateov64b40mipiraw_Scene_Capture_inSensorZoom1.so
-vendor/lib64/libCamera_agateov64b40mipiraw_Scene_Capture_inSensorZoom2.so
 vendor/lib64/libCamera_agateov64b40mipiraw_Scene_Capture_Magic.so
 vendor/lib64/libCamera_agateov64b40mipiraw_Scene_Capture_Professional.so
 vendor/lib64/libCamera_agateov64b40mipiraw_Scene_Capture_Upscale.so
 vendor/lib64/libCamera_agateov64b40mipiraw_Scene_Capture_Zoom1.so
 vendor/lib64/libCamera_agateov64b40mipiraw_Scene_Capture_Zoom2.so
+vendor/lib64/libCamera_agateov64b40mipiraw_Scene_Capture_inSensorZoom1.so
+vendor/lib64/libCamera_agateov64b40mipiraw_Scene_Capture_inSensorZoom2.so
 vendor/lib64/libCamera_agateov64b40mipiraw_Scene_Preview.so
 vendor/lib64/libCamera_agateov64b40mipiraw_Scene_Preview_Zoom1.so
 vendor/lib64/libCamera_agateov64b40mipiraw_Scene_Preview_Zoom2.so
@@ -463,6 +461,8 @@ vendor/lib64/libCamera_agateov64b40mipiraw_Video_Log.so
 vendor/lib64/libCamera_agateov64b40mipiraw_WeChatQQ_Video.so
 vendor/lib64/libCamera_agateov64b40mipiraw_WeChat_Preview.so
 vendor/lib64/libCamera_agateov64b40mipiraw_XTS_Capture.so
+vendor/lib64/libCamera_agateov64b40mipiraw_portrait_capture_full.so
+vendor/lib64/libCamera_agateov64b40mipiraw_portrait_preview_full.so
 vendor/lib64/libCamera_agates5k5e9mipiraw_Face_Capture.so
 vendor/lib64/libCamera_agates5k5e9mipiraw_Face_Preview.so
 vendor/lib64/libCamera_agates5k5e9mipiraw_Flash_A_Capture.so
@@ -499,17 +499,15 @@ vendor/lib64/libCamera_agates5khm2mipiraw_HDR_Scene_Capture_Zoom2.so
 vendor/lib64/libCamera_agates5khm2mipiraw_LLHDR_Face_Capture.so
 vendor/lib64/libCamera_agates5khm2mipiraw_LLHDR_Scene_Capture.so
 vendor/lib64/libCamera_agates5khm2mipiraw_Panorama_Capture.so
-vendor/lib64/libCamera_agates5khm2mipiraw_portrait_capture_full.so
-vendor/lib64/libCamera_agates5khm2mipiraw_portrait_preview_full.so
 vendor/lib64/libCamera_agates5khm2mipiraw_QQ_Preview.so
 vendor/lib64/libCamera_agates5khm2mipiraw_Scene_Capture.so
 vendor/lib64/libCamera_agates5khm2mipiraw_Scene_Capture_108M.so
 vendor/lib64/libCamera_agates5khm2mipiraw_Scene_Capture_CE.so
-vendor/lib64/libCamera_agates5khm2mipiraw_Scene_Capture_inSensorZoom1.so
-vendor/lib64/libCamera_agates5khm2mipiraw_Scene_Capture_inSensorZoom2.so
 vendor/lib64/libCamera_agates5khm2mipiraw_Scene_Capture_Professional.so
 vendor/lib64/libCamera_agates5khm2mipiraw_Scene_Capture_Zoom1.so
 vendor/lib64/libCamera_agates5khm2mipiraw_Scene_Capture_Zoom2.so
+vendor/lib64/libCamera_agates5khm2mipiraw_Scene_Capture_inSensorZoom1.so
+vendor/lib64/libCamera_agates5khm2mipiraw_Scene_Capture_inSensorZoom2.so
 vendor/lib64/libCamera_agates5khm2mipiraw_Scene_Preview.so
 vendor/lib64/libCamera_agates5khm2mipiraw_Scene_Preview_Zoom1.so
 vendor/lib64/libCamera_agates5khm2mipiraw_Scene_Preview_Zoom2.so
@@ -562,9 +560,11 @@ vendor/lib64/libCamera_agates5khm2mipiraw_Video_Log.so
 vendor/lib64/libCamera_agates5khm2mipiraw_WeChatQQ_Video.so
 vendor/lib64/libCamera_agates5khm2mipiraw_WeChat_Preview.so
 vendor/lib64/libCamera_agates5khm2mipiraw_XTS_Capture.so
-vendor/lib64/libJpgEncPipe.so
+vendor/lib64/libCamera_agates5khm2mipiraw_portrait_capture_full.so
+vendor/lib64/libCamera_agates5khm2mipiraw_portrait_preview_full.so
 vendor/lib64/libHalSuperSensorServer.so
 vendor/lib64/libHalSuperSensorServerCWrapper.so
+vendor/lib64/libJpgEncPipe.so
 vendor/lib64/libSQLiteModule_VER_ALL.so
 vendor/lib64/libSonyIMX230PdafLibrary.so
 vendor/lib64/libSonyIMX230PdafLibraryWrapper.so
@@ -581,7 +581,6 @@ vendor/lib64/lib_bsscore.so
 vendor/lib64/lib_sr_models.so
 vendor/lib64/libaaa_ltm.so
 vendor/lib64/libaaa_ltmx.so
-vendor/lib64/libaedv.so
 vendor/lib64/libaiawb_moon.so
 vendor/lib64/libaiawb_moon_model.so
 vendor/lib64/libaiawb_p1ggm.so
@@ -590,8 +589,8 @@ vendor/lib64/libaiawb_sun_model.so
 vendor/lib64/libaibc_tuning.so
 vendor/lib64/libaibc_tuning_p2.so
 vendor/lib64/libaibc_tuning_p3.so
-vendor/lib64/libbeauty_face_interface.so
 vendor/lib64/libainrcore.so
+vendor/lib64/libalCFR.so
 vendor/lib64/libalLDC.so
 vendor/lib64/libalhLDC.so
 vendor/lib64/libanc_calibration_parser.so
@@ -607,6 +606,7 @@ vendor/lib64/libarcsoft_portrait_lighting_c.so
 vendor/lib64/libarcsoft_sn_mtk_apu.so
 vendor/lib64/libarcsoft_super_night_raw.so
 vendor/lib64/libarcsoft_supernight.so
+vendor/lib64/libbeauty_face_interface.so
 vendor/lib64/libbwc.so
 vendor/lib64/libc++_shared.so
 vendor/lib64/libcam.ArcCamEngine.so
@@ -690,9 +690,12 @@ vendor/lib64/libimageio.so
 vendor/lib64/libimageio_plat_drv.so
 vendor/lib64/libimageio_plat_pipe.so
 vendor/lib64/libispcameraca.so
+vendor/lib64/libjpeg-alpha-oal_vendor.so
+vendor/lib64/libjpeg-alpha_vendor.so
 vendor/lib64/libladder.so
 vendor/lib64/liblpcnr.so
 vendor/lib64/libmfllcore.so
+vendor/lib64/libmiai_portraitsupernight.so
 vendor/lib64/libmialgo_ie_capture.so
 vendor/lib64/libmialgo_sd.so
 vendor/lib64/libmialgo_utils.so
@@ -739,6 +742,10 @@ vendor/lib64/libmtkcam_mapping_mgr.so
 vendor/lib64/libmtkcam_metadata.so
 vendor/lib64/libmtkcam_metastore.so
 vendor/lib64/libmtkcam_mfb.so
+vendor/lib64/libmtkcam_modulefactory_aaa.so
+vendor/lib64/libmtkcam_modulefactory_custom.so
+vendor/lib64/libmtkcam_modulefactory_drv.so
+vendor/lib64/libmtkcam_modulefactory_utils.so
 vendor/lib64/libmtkcam_modulehelper.so
 vendor/lib64/libmtkcam_owe.so
 vendor/lib64/libmtkcam_pipeline.so
@@ -846,7 +853,6 @@ vendor/lib/libgralloctypes_mtk.so
 vendor/lib/libhdrvideo.so
 vendor/lib/libion_mtk.so
 vendor/lib/libion_ulit.so
-vendor/lib/libladder.so
 vendor/lib/libmml.so
 vendor/lib/libpq_cust_base.so
 vendor/lib/libpqframework.so
@@ -1055,11 +1061,7 @@ vendor/lib/libvcodec_oal.so
 vendor/lib/libvcodec_utility.so
 vendor/lib/libvcodecdrv.so
 vendor/lib/libvcodecdrv_header_stub.so
-vendor/lib/libvpu.so
-vendor/lib/libvpu5.so
-vendor/lib/libvpud_vcodec.so
 vendor/lib/mt6893/libmtk_drvb.so
-vendor/lib64/libvpu.so
 vendor/lib64/mt6893/libmtk_drvb.so
 
 # Media (Codec2)
@@ -1072,7 +1074,6 @@ vendor/lib/libcodec2_mtk_venc.so
 vendor/lib/libcodec2_vpp_qt_plugin.so
 vendor/lib/libcodec2_vpp_rs_plugin.so
 vendor/lib/libformatter.so
-vendor/lib/libvcodec_utility.so
 vendor/lib64/libcodec2_mtk_c2store.so
 vendor/lib64/libcodec2_mtk_vdec.so
 vendor/lib64/libcodec2_mtk_venc.so
@@ -1294,9 +1295,6 @@ vendor/lib64/libssccalapi.so
 vendor/bin/hw/vendor.xiaomi.hardware.citsensorservice@1.1-service
 vendor/etc/init/vendor.xiaomi.hardware.citsensorservice@1.1-service.rc
 vendor/lib64/hw/vendor.xiaomi.hardware.citsensorservice@1.1-impl.so
-vendor/lib64/libhfmanager.so
-vendor/lib64/libhfmanagerwrapper.so
-vendor/lib64/libssccalapi.so
 vendor/lib64/vendor.xiaomi.hardware.citsensorservice@1.0.so
 vendor/lib64/vendor.xiaomi.hardware.citsensorservice@1.1.so
 
@@ -1315,13 +1313,9 @@ vendor/lib/libteeclientjni_isee@1.1.so
 vendor/lib/libteei_daemon_vfs.so
 vendor/lib/libthha.so
 vendor/lib64/libTEECommon.so
-vendor/lib64/libgz_gp_client.so
-vendor/lib64/libgz_uree.so
 vendor/lib64/libimsg_log.so
 vendor/lib64/libteecli.so
 vendor/lib64/libteeclientjni_isee.so
-vendor/lib64/libteeclientjni_isee.so
-vendor/lib64/libteeclientjni_isee@1.1.so
 vendor/lib64/libteeclientjni_isee@1.1.so
 vendor/lib64/libteei_daemon_vfs.so
 vendor/lib64/libthha.so
@@ -1359,7 +1353,6 @@ vendor/bin/netdagent
 vendor/etc/init/netdagent.rc
 vendor/etc/init/tetheroffloadservice.rc
 vendor/lib64/libforkexecwrap.so
-vendor/lib64/libifcutils_mtk.so
 vendor/lib64/vendor.mediatek.hardware.netdagent@1.0.so
 
 # Thermal
