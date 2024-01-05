@@ -34,7 +34,6 @@ $(VENDOR_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@ln -sf $(TARGET_BOARD_PLATFORM)/libpq_prot.so $(TARGET_OUT_VENDOR)/lib/libpq_prot.so
 	@ln -sf $(TARGET_BOARD_PLATFORM)/libnir_neon_driver.so $(TARGET_OUT_VENDOR)/lib/libnir_neon_driver.so
 	@ln -sf $(TARGET_BOARD_PLATFORM)/libgpudataproducer.so $(TARGET_OUT_VENDOR)/lib/libgpudataproducer.so
-	@ln -sf $(TARGET_BOARD_PLATFORM)/arm.graphics-ndk_platform.so $(TARGET_OUT_VENDOR)/lib/arm.graphics-ndk_platform.so
 	@ln -sf $(TARGET_BOARD_PLATFORM)/arm.graphics-V1-ndk_platform.so $(TARGET_OUT_VENDOR)/lib/arm.graphics-V1-ndk_platform.so
 	@ln -sf /vendor/lib/egl/libGLES_mali.so $(TARGET_OUT_VENDOR)/lib/hw/vulkan.mt6893.so
 	@ln -sf $(TARGET_BOARD_PLATFORM)/libGLES_mali.so $(TARGET_OUT_VENDOR)/lib64/egl/libGLES_mali.so
@@ -50,7 +49,6 @@ $(VENDOR_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@ln -sf $(TARGET_BOARD_PLATFORM)/libneuron_runtime.5.so $(TARGET_OUT_VENDOR)/lib64/libneuron_runtime.5.so
 	@ln -sf $(TARGET_BOARD_PLATFORM)/libneuron_runtime.so $(TARGET_OUT_VENDOR)/lib64/libneuron_runtime.so
 	@ln -sf $(TARGET_BOARD_PLATFORM)/libgpudataproducer.so $(TARGET_OUT_VENDOR)/lib64/libgpudataproducer.so
-	@ln -sf $(TARGET_BOARD_PLATFORM)/arm.graphics-ndk_platform.so $(TARGET_OUT_VENDOR)/lib64/arm.graphics-ndk_platform.so
 	@ln -sf $(TARGET_BOARD_PLATFORM)/arm.graphics-V1-ndk_platform.so $(TARGET_OUT_VENDOR)/lib64/arm.graphics-V1-ndk_platform.so
 	@ln -sf $(TARGET_BOARD_PLATFORM)/libmcv_runtime.mtk.so $(TARGET_OUT_VENDOR)/lib64/libmcv_runtime.mtk.so
 	@ln -sf $(TARGET_BOARD_PLATFORM)/libDR.so $(TARGET_OUT_VENDOR)/lib64/libDR.so
