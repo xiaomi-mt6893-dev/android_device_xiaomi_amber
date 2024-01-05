@@ -47,59 +47,23 @@ on post-fs-data
     chown system system /dev/spm
 
 
-on init
-    # Refer to http://source.android.com/devices/tech/storage/index.html
-    # It said, "Starting in Android 4.4, multiple external storage devices are surfaced to developers through
-    #           Context.getExternalFilesDirs(), Context.getExternalCacheDirs(), and Context.getObbDirs().
-    #           External storage devices surfaced through these APIs must be a semi-permanent part of the device (such as an SD card slot in a battery compartment).
-    #           Developers expect data stored in these locations to be available over long periods of time."
-    # Therefore, if the target doesn't support sd hot-plugging (Ex: the SD card slot in a battery compartment), we need to export SECONDARY_STORAGE in 'boot' section
-    #
-    # export SECONDARY_STORAGE /storage/sdcard1
+    # NFC
+    mkdir /data/vendor/nfc 0770 nfc nfc
+    chmod 0660 /dev/nq-nci
+    chown nfc nfc /dev/nq-nci
+    chmod 0660 /dev/p73
+    chown nfc nfc /dev/p73
 
-service fuse_usbotg /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/usbotg /storage/usbotg
-    class late_start
-    disabled
+    # Display
+    chown system system /sys/class/mi_display/disp-DSI-0/brightness_clone
+    chmod 0666 /sys/class/mi_display/disp-DSI-0/brightness_clone
 
-
-#copy JIIGAN bokeh model
-on property:sys.boot_completed=1
-    mkdir /data/vendor/camera/jiiganmodel 0777 cameraserver audio
-    mkdir /data/vendor/camera/jiiganmodel/rt_model 0777 cameraserver audio
-    copy /vendor/etc/camera/jiiganmodel/rt_model/preview_model /data/vendor/camera/jiiganmodel/rt_model/preview_model
-    chown cameraserver audio  /data/vendor/camera/jiiganmodel/rt_model/preview_model
-    chmod 0777 /data/vendor/camera/jiiganmodel/rt_model/preview_model
-    copy /vendor/etc/camera/jiiganmodel/rt_model/preview_cache /data/vendor/camera/jiiganmodel/rt_model/preview_cache
-    chown cameraserver audio  /data/vendor/camera/jiiganmodel/rt_model/preview_cache
-    chmod 0777 /data/vendor/camera/jiiganmodel/rt_model/preview_cache
-    copy /vendor/etc/camera/jiiganmodel/rt_model/preview_policy /data/vendor/camera/jiiganmodel/rt_model/preview_policy
-    chown cameraserver audio  /data/vendor/camera/jiiganmodel/rt_model/preview_policy
-    chmod 0777 /data/vendor/camera/jiiganmodel/rt_model/preview_policy
-    mkdir /data/vendor/camera/jiiganmodel/dof_model 0777 cameraserver audio
-    copy /vendor/etc/camera/jiiganmodel/dof_model/capture_cache /data/vendor/camera/jiiganmodel/dof_model/capture_cache
-    chown cameraserver audio  /data/vendor/camera/jiiganmodel/dof_model/capture_cache
-    chmod 0777 /data/vendor/camera/jiiganmodel/dof_model/capture_cache
-    copy /vendor/etc/camera/jiiganmodel/dof_model/capture_model /data/vendor/camera/jiiganmodel/dof_model/capture_model
-    chown cameraserver audio  /data/vendor/camera/jiiganmodel/dof_model/capture_model
-    chmod 0777 /data/vendor/camera/jiiganmodel/dof_model/capture_model
-    copy /vendor/etc/camera/jiiganmodel/dof_model/capture_policy /data/vendor/camera/jiiganmodel/dof_model/capture_policy
-    chown cameraserver audio  /data/vendor/camera/jiiganmodel/dof_model/capture_policy
-    chmod 0777 /data/vendor/camera/jiiganmodel/dof_model/capture_policy
-
-service vendor_tcpdump /vendor/bin/tcpdump -i any -W 3 -C 5 -s 134 -w /data/vendor/wlan_logs/tcpdump.pcap
-       class main
-       user root
-       group root wifi
-       disabled
-       oneshot
-
-on property:sys.user.0.ce_available=true && property:ro.debuggable=1
-    start vendor_tcpdump
-
-
-service mi_thermald /system/vendor/bin/mi_thermald
-    class main
-    user root
-    group system
-    seclabel u:r:mi_thermald:s0
-
+    # ufscld function permission
+    chown root system /sys/devices/platform/bootdevice/ufscld/auto_hibern8_enable
+    chown root system /sys/devices/platform/bootdevice/ufscld/block_suspend
+    chown root system /sys/devices/platform/bootdevice/ufscld/cld_opration_status
+    chown root system /sys/devices/platform/bootdevice/ufscld/debug
+    chown root system /sys/devices/platform/bootdevice/ufscld/frag_level
+    chown root system /sys/devices/platform/bootdevice/ufscld/trigger
+    chown root system /sys/devices/platform/bootdevice/ufscld/trigger_interval
+    chmod 664 /sys/devices/platform/bootdevice/ufscld/trigger
