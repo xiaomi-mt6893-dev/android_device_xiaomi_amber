@@ -1058,7 +1058,6 @@ system/lib64/libimsma_rtp.so
 system/lib64/libimsma_socketwrapper.so
 system/lib64/libmtk_vt_service.so
 system/lib64/libmtk_vt_wrapper.so
-system/lib64/libmtkperf_client.so
 system/lib64/libsignal.so
 system/lib64/libsink.so
 system/lib64/libsource.so
@@ -1215,9 +1214,7 @@ vendor/etc/init/vendor.mediatek.hardware.mtkpower@1.0-service.rc
 vendor/etc/power_app_cfg.xml
 vendor/etc/powercontable.xml
 vendor/etc/powerscntbl.xml
-vendor/lib/libmtkperf_client_vendor.so
 vendor/lib64/hw/vendor.mediatek.hardware.mtkpower@1.2-impl.so
-vendor/lib64/libmtkperf_client_vendor.so
 vendor/lib64/libperfctl_vendor.so
 vendor/lib64/libpixelflinger.so
 vendor/lib64/libpower_timer.so
