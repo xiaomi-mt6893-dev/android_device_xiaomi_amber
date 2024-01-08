@@ -306,6 +306,7 @@ PRODUCT_PACKAGES += \
     init.mt6893.rc \
     init.mt6893.usb.rc \
     init.project.rc \
+    init.target.rc \
     init.recovery.mt6893.rc \
     init.sensor_2_0.rc \
     ueventd.mt6893.rc
