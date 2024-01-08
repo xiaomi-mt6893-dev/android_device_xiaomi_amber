@@ -982,7 +982,6 @@ vendor/lib64/libwvkeybox.so
 vendor/lib64/mediadrm/libwvdrmengine.so
 
 # Fingerprint
-vendor/bin/hw/mfp-daemon
 -vendor/etc/vintf/manifest/fod.xml
 vendor/firmware/168_fingerprintRecord_RTP.bin
 vendor/lib64/com.fingerprints.extension@3.0.so
