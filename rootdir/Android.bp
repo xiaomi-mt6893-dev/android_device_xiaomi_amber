@@ -14,8 +14,8 @@ prebuilt_etc {
 
 // Init configuration files
 prebuilt_etc {
-    name: "init.cgroup.rc",
-    src: "etc/init.cgroup.rc",
+    name: "init.mt6893.power.rc",
+    src: "etc/init.mt6893.power.rc",
     sub_dir: "init/hw",
     vendor: true,
 }
