@@ -11,6 +11,9 @@
 # Display
 /dev/mi_display/disp_feature u:object_r:vendor_displayfeature_device:s0
 
+# Extcon
+genfscon sysfs /devices/platform/extcon_usb/extcon/extcon0/cable.1/name                                u:object_r:sysfs_extcon:s0
+
 # Fingerprint
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2.3-service\.xiaomi          u:object_r:hal_fingerprint_default_exec:s0
 /mnt/vendor/persist/goodix(/.*)?                                                                       u:object_r:vendor_fingerprint_data_file:s0
