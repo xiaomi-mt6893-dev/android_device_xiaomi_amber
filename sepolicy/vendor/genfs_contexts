@@ -16,6 +16,7 @@ genfscon sysfs /devices/platform/1101a000.i2c11/i2c-11/11-005b/power_supply/bq25
 genfscon sysfs /devices/platform/1101a000.i2c11/i2c-11/11-0051/power_supply/bq2597x-slave                  u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/platform/1101a000.i2c11/i2c-11/11-0065/power_supply/bq25980-master                 u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/platform/1101a000.i2c11/i2c-11/11-0067/power_supply/bq25980-slave                  u:object_r:sysfs_batteryinfo:s0
+genfscon sysfs /devices/platform/11cb1000.i2c9/i2c-9/9-0055/verify_digest                                  u:object_r:sysfs_batteryinfo:s0
 
 # Wakeup (https://lkml.org/lkml/2019/8/6/1275)
 genfscon sysfs /devices/platform/11281000.i2c11/i2c-11/11-0066/power_supply/cp_slave/wakeup                u:object_r:sysfs_wakeup:s0
