@@ -309,10 +309,10 @@ PRODUCT_PACKAGES += \
     fstab.mt6893.ramdisk \
 
 PRODUCT_PACKAGES += \
-    init.cgroup.rc \
     init.connectivity.rc \
     init.modem.rc \
     init.mt6893.rc \
+    init.mt6893.power.rc \
     init.mt6893.usb.rc \
     init.project.rc \
     init.target.rc \
