@@ -1,15 +1,10 @@
-on charger
-    # Lock to lowest frequency on charger mode
-    write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor powersave
-    write /sys/devices/system/cpu/cpufreq/policy6/scaling_governor powersave
-
-    # Offline all cores except cpu0
+on property:init.svc.vendor.charger=running
+    # Keep one LITTLE and one big
     write /sys/devices/system/cpu/cpu1/online 0
     write /sys/devices/system/cpu/cpu2/online 0
     write /sys/devices/system/cpu/cpu3/online 0
     write /sys/devices/system/cpu/cpu4/online 0
     write /sys/devices/system/cpu/cpu5/online 0
-    write /sys/devices/system/cpu/cpu6/online 0
     write /sys/devices/system/cpu/cpu7/online 0
 
 on init
@@ -56,10 +51,10 @@ on init
     chmod 0666 /dev/stune/io/tasks
 
     # update cpus for cpuset cgroup
-    write /dev/cpuset/foreground/cpus 0-2,4-7
+    write /dev/cpuset/foreground/cpus 0-7
     write /dev/cpuset/foreground/boost/cpus 0-7
-    write /dev/cpuset/background/cpus 0-2
-    write /dev/cpuset/system-background/cpus 0-3
+    write /dev/cpuset/background/cpus 0-3
+    write /dev/cpuset/system-background/cpus 0-5
     write /dev/cpuset/top-app/cpus 0-7
 
     # Set default SchedTune values
@@ -69,6 +64,17 @@ on init
     write /dev/stune/top-app/schedtune.boost 1
 
 on enable-low-power
+    # Back to default VM settings
+    write /proc/sys/vm/dirty_expire_centisecs 3000
+    write /proc/sys/vm/dirty_background_ratio 10
+
+    # Setup runtime cpusets
+    write /dev/cpuset/top-app/cpus 0-7
+    write /dev/cpuset/foreground/cpus 0-5,7
+    write /dev/cpuset/background/cpus 4-5
+    write /dev/cpuset/system-background/cpus 2-5
+    write /dev/cpuset/restricted/cpus 2-5
+
     write /proc/cpufreq/cpufreq_sched_disable 0
     write /proc/sys/kernel/sched_migration_cost_ns 200000
 
