@@ -212,6 +212,7 @@ PRODUCT_PACKAGES += \
 # Overlays
 PRODUCT_PACKAGES += \
     SettingsResOverlayAmber \
+    SystemUIOverlayAmber \
     WifiOverlay \
     CarrierConfigOverlayAmber \
     FrameworksResOverlayAmber \
