@@ -216,7 +216,8 @@ PRODUCT_PACKAGES += \
     WifiOverlay \
     CarrierConfigOverlayAmber \
     FrameworksResOverlayAmber \
-    TelephonyResOverlayAmber
+    TelephonyResOverlayAmber \
+    TetheringResOverlayAmber
 
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay-lineage
