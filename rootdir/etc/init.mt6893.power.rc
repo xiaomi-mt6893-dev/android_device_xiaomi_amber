@@ -67,10 +67,10 @@ on init
     write /sys/devices/system/cpu/cpufreq/policy6/schedutil/down_rate_limit_us 20000
 
     # update cpus for cpuset cgroup
-    write /dev/cpuset/foreground/cpus 0-7
+    write /dev/cpuset/foreground/cpus 0-2,4-7
     write /dev/cpuset/foreground/boost/cpus 0-7
-    write /dev/cpuset/background/cpus 0-3
-    write /dev/cpuset/system-background/cpus 0-5
+    write /dev/cpuset/background/cpus 0-2
+    write /dev/cpuset/system-background/cpus 0-3
     write /dev/cpuset/top-app/cpus 0-7
 
     # Set default SchedTune values
@@ -83,13 +83,6 @@ on enable-low-power
     # Back to default VM settings
     write /proc/sys/vm/dirty_expire_centisecs 3000
     write /proc/sys/vm/dirty_background_ratio 10
-
-    # Setup runtime cpusets
-    write /dev/cpuset/top-app/cpus 0-7
-    write /dev/cpuset/foreground/cpus 0-5,7
-    write /dev/cpuset/background/cpus 4-5
-    write /dev/cpuset/system-background/cpus 2-5
-    write /dev/cpuset/restricted/cpus 2-5
 
     # Enable UFS powersaving
     write /sys/devices/platform/bootdevice/clkgate_enable 1
