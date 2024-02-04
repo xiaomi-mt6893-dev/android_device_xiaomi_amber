@@ -1,4 +1,4 @@
-# Unpinned blobs from amber_global-user 12 SP1A.210812.016 V14.0.5.0.TKWMIXM release-keys
+# Unpinned blobs from agate_global-user 14 UP1A.231005.007 V816.0.2.0.UKWMIXM release-keys
 
 # AEE
 vendor/lib/libaedv.so
@@ -58,6 +58,10 @@ vendor/etc/audio_param/AudioParamOptions.xml
 vendor/etc/audio_param/AudioParamOptions_vext.xml
 vendor/etc/audio_param/BtInfo_AudioParam.xml
 vendor/etc/audio_param/BtInfo_ParamUnitDesc.xml
+vendor/etc/audio_param/CRSVolUI_AudioParam.xml
+vendor/etc/audio_param/CRSVolUI_ParamUnitDesc.xml
+vendor/etc/audio_param/CRSVol_AudioParam.xml
+vendor/etc/audio_param/CRSVol_ParamUnitDesc.xml
 vendor/etc/audio_param/HpImpedance_AudioParam.xml
 vendor/etc/audio_param/HpImpedance_ParamUnitDesc.xml
 vendor/etc/audio_param/MicInfo_AudioParam.xml
@@ -826,7 +830,7 @@ vendor/lib/egl/mt6893/libGLES_mali.so:vendor/lib/egl/libGLES_mali.so
 vendor/lib/hw/mt6893/android.hardware.graphics.allocator@4.0-impl-mediatek.so:vendor/lib/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so
 vendor/lib/hw/mt6893/android.hardware.graphics.mapper@4.0-impl-mediatek.so:vendor/lib/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so
 vendor/lib/hw/mt6893/vulkan.mali.so:vendor/lib/hw/vulkan.mali.so
-vendor/lib/hw/vendor.mediatek.hardware.pq@2.13-impl.so
+vendor/lib/hw/vendor.mediatek.hardware.pq@2.15-impl.so
 vendor/lib/libDefaultFpsActor.so
 vendor/lib/libFrameRecord.so
 vendor/lib/libNoFpsActor.so
@@ -866,6 +870,8 @@ vendor/lib/vendor.mediatek.hardware.pq@2.10.so
 vendor/lib/vendor.mediatek.hardware.pq@2.11.so
 vendor/lib/vendor.mediatek.hardware.pq@2.12.so
 vendor/lib/vendor.mediatek.hardware.pq@2.13.so
+vendor/lib/vendor.mediatek.hardware.pq@2.14.so
+vendor/lib/vendor.mediatek.hardware.pq@2.15.so
 vendor/lib/vendor.mediatek.hardware.pq@2.2.so
 vendor/lib/vendor.mediatek.hardware.pq@2.3.so
 vendor/lib/vendor.mediatek.hardware.pq@2.4.so
@@ -884,7 +890,7 @@ vendor/lib64/hw/hwcomposer.mt6893.so
 vendor/lib64/hw/mt6893/android.hardware.graphics.allocator@4.0-impl-mediatek.so:vendor/lib64/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so
 vendor/lib64/hw/mt6893/android.hardware.graphics.mapper@4.0-impl-mediatek.so:vendor/lib64/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so
 vendor/lib64/hw/mt6893/vulkan.mali.so:vendor/lib64/hw/vulkan.mali.so
-vendor/lib64/hw/vendor.mediatek.hardware.pq@2.13-impl.so
+vendor/lib64/hw/vendor.mediatek.hardware.pq@2.15-impl.so
 vendor/lib64/libDefaultFpsActor.so
 vendor/lib64/libFrameRecord.so
 vendor/lib64/libNoFpsActor.so
@@ -929,6 +935,8 @@ vendor/lib64/vendor.mediatek.hardware.pq@2.10.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.11.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.12.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.13.so
+vendor/lib64/vendor.mediatek.hardware.pq@2.14.so
+vendor/lib64/vendor.mediatek.hardware.pq@2.15.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.2.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.3.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.4.so
@@ -1019,40 +1027,39 @@ system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml
 -system_ext/framework/com.android.hotwordenrollment.common.util.jar
 
 # IMS (IP Multimedia Subsystem)
-system/bin/vtservice
-system/etc/init/init.vtservice.rc
--system/framework/mediatek-common.jar
--system/framework/mediatek-framework.jar
--system/framework/mediatek-ims-base.jar
--system/framework/mediatek-ims-common.jar
--system/framework/mediatek-ims-extension-plugin.jar
--system/framework/mediatek-telecom-common.jar
--system/framework/mediatek-telephony-base.jar
--system/framework/mediatek-telephony-common.jar
--system/framework/mediatek-wfo-legacy.jar
-system/lib64/libcomutils.so
-system/lib64/libimsma.so
-system/lib64/libimsma_adapt.so
-system/lib64/libimsma_rtp.so
-system/lib64/libimsma_socketwrapper.so
-system/lib64/libmtk_vt_service.so
-system/lib64/libmtk_vt_wrapper.so
-system/lib64/libmtkperf_client.so
-system/lib64/libsignal.so
-system/lib64/libsink.so
-system/lib64/libsource.so
-system/lib64/libvcodec_cap.so
-system/lib64/libvcodec_capenc.so
-system/lib64/libvsim-adaptor-client.so
-system/lib64/libvt_avsync.so
--system/priv-app/ImsService/ImsService.apk|eabeee7f63e0510406f12f78ad1a9a12fd501140
-system_ext/lib/vendor.mediatek.hardware.videotelephony@1.0.so
+system_ext/bin/vtservice
+system_ext/etc/init/init.vtservice.rc
+system_ext/framework/mediatek-common.jar:system/framework/mediatek-common.jar
+system_ext/framework/mediatek-framework.jar:system/framework/mediatek-framework.jar
+system_ext/framework/mediatek-ims-base.jar:system/framework/mediatek-ims-base.jar
+system_ext/framework/mediatek-ims-common.jar:system/framework/mediatek-ims-common.jar
+system_ext/framework/mediatek-ims-extension-plugin.jar:system/framework/mediatek-ims-extension-plugin.jar
+system_ext/framework/mediatek-telecom-common.jar:system/framework/mediatek-telecom-common.jar
+system_ext/framework/mediatek-telephony-base.jar:system/framework/mediatek-telephony-base.jar
+system_ext/framework/mediatek-telephony-common.jar:system/framework/mediatek-telephony-common.jar
+system_ext/lib64/libcomutils.so
+system_ext/lib64/libimsma.so
+system_ext/lib64/libimsma_adapt.so
+system_ext/lib64/libimsma_rtp.so
+system_ext/lib64/libimsma_socketwrapper.so
+system_ext/lib64/libmtk_vt_service.so
+system_ext/lib64/libmtk_vt_wrapper.so
+system_ext/lib64/libsignal.so
+system_ext/lib64/libsink.so
+system_ext/lib64/libsource.so
+system_ext/lib64/libvcodec_cap.so
+system_ext/lib64/libvcodec_capenc.so
+system_ext/lib64/libvt_avsync.so
+system_ext/lib64/vendor.mediatek.hardware.videotelephony-V1-ndk.so
 system_ext/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
+
+# Radio (IMS-App) - agate_global-user 14 UP1A.231005.007 V816.0.2.0.UKWMIXM release-keys (patched)
+system_ext/priv-app/ImsService/ImsService.apk:system/priv-app/ImsService/ImsService.apk|1a1dff3886e2032375630cbc068f196739156ffd
 
 # Keymaster
 vendor/bin/bp_kmsetkey_ca
-vendor/bin/hw/android.hardware.keymaster@4.0-service.beanpod
-vendor/etc/init/android.hardware.keymaster@4.0-service.beanpod.rc
+vendor/bin/hw/android.hardware.keymaster@4.1-service.beanpod
+vendor/etc/init/android.hardware.keymaster@4.1-service.beanpod.rc
 vendor/etc/init/microtrust.bp_kmsetkey_ca.rc
 
 # Media
@@ -1098,7 +1105,6 @@ vendor/lib/libMtkOmxCore.so
 vendor/lib/libMtkOmxGsmDec.so
 vendor/lib/libMtkOmxMp3Dec.so
 vendor/lib/libadpcmdec_mtk.so
-vendor/lib/libalacdec_mtk.so
 vendor/lib/libmp3dec_mtk.so
 vendor/lib/libstagefrighthw.so
 vendor/lib64/libstagefrighthw.so
@@ -1256,19 +1262,8 @@ vendor/lib64/vendor.mediatek.hardware.mtkradioex@3.0.so
 
 # Radio (IMS)
 vendor/bin/hw/vtservice_hidl
-vendor/bin/rcs_volte_stack
-vendor/bin/volte_clientapi_ua
-vendor/bin/volte_rcs_ua
 vendor/etc/init/init.vtservice_hidl.rc
-vendor/etc/init/volte_clientapi_ua.rc
-vendor/etc/init/volte_rcs_ua.rc
-vendor/lib/libipsec_ims_shr.so
-vendor/lib/librcs_volte_core.so
-vendor/lib/vendor.mediatek.hardware.rcs@2.0.so
-vendor/lib/vendor.mediatek.hardware.videotelephony@1.0.so
 vendor/lib64/hw/vendor.mediatek.hardware.videotelephony@1.0-impl.so
-vendor/lib64/libipsec_ims_shr.so
-vendor/lib64/vendor.mediatek.hardware.clientapi@1.0.so
 vendor/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
 
 # Secure Element
@@ -1331,6 +1326,7 @@ vendor/thh/ta/5020170115e016302017012521300000.ta
 vendor/thh/ta/7778c03fc30c4dd0a319ea29643d4d4b.ta
 vendor/thh/ta/86f623f6a2994dfdb560ffd3e5a62c29.ta
 vendor/thh/ta/8888c03fc30c4dd0a319ea29643d4d4b.ta
+vendor/thh/ta/8aaaf201246000007143fe4f7c823c80.ta
 vendor/thh/ta/9073f03a9618383bb1856eb3f990babd.ta
 vendor/thh/ta/93feffccd8ca11e796c7c7a21acb4932.ta
 vendor/thh/ta/a985d3eb3b524d44be6c628a813561e8.ta
@@ -1395,6 +1391,9 @@ vendor/lib64/hw/android.hardware.thermal@2.0-impl.so
 vendor/lib64/hw/thermal_hal.so
 vendor/lib64/libmtcloader.so
 
+# Vibrator
+vendor/firmware/aw8697_haptic.bin
+
 # USB
 vendor/bin/hw/android.hardware.usb@1.2-service-mediatekv2
 vendor/etc/init/android.hardware.usb@1.2-service-mediatekv2.rc
@@ -1403,6 +1402,7 @@ vendor/etc/vintf/manifest/android.hardware.usb@1.2-service-mediatekv2.xml
 # Wi-Fi
 vendor/bin/wlan_assistant
 vendor/etc/init/wlan_assistant.rc
+vendor/etc/wifi/passpointProfile.conf
 vendor/firmware/WIFI_RAM_CODE_soc3_0_1a_1.bin
 vendor/firmware/soc3_0_ram_wifi_1a_1_hdr.bin
 vendor/firmware/wifi.cfg
