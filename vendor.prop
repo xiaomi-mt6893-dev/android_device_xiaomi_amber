@@ -98,6 +98,7 @@ ro.surface_flinger.max_frame_buffer_acquired_buffers=3
 ro.surface_flinger.protected_contents=true
 ro.surface_flinger.supports_background_blur=1
 ro.surface_flinger.use_content_detection_for_refresh_rate=true
+ro.surface_flinger.uclamp.min=150
 ro.vendor.composer_version=2.3
 ro.vendor.display.sensortype=2
 ro.vendor.mml.mtk_mml_support=0
