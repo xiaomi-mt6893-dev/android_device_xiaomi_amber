@@ -1036,15 +1036,6 @@ service osi /system/bin/osi
     oneshot
     #seclabel u:r:osi:s0
 
-service vendor.charger /system/bin/charger
-    user system
-    group system graphics wakelock input
-    capabilities SYS_BOOT
-    file /dev/kmsg w
-    file /sys/fs/pstore/console-ramoops-0 r
-    file /sys/fs/pstore/console-ramoops r
-    file /proc/last_kmsg r
-
 on property:vendor.audio.voice.receiver.status=on
     write /sys/class/thermal/thermal_message/voice_receiver_state 10000
 
