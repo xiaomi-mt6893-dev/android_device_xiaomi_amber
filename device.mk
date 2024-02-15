@@ -53,6 +53,8 @@ PRODUCT_PACKAGES += \
     otapreopt_script
 
 # Audio
+TARGET_EXCLUDES_AUDIOFX := true
+
 PRODUCT_PACKAGES += \
     android.hardware.audio.service \
     android.hardware.audio@7.0-impl \
