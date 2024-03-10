@@ -58,6 +58,11 @@ function blob_fixup {
         system/lib64/libsink.so)
             "${PATCHELF}" --add-needed "libshim_sink.so" "$2"
             ;;
+        vendor/bin/mnld|\
+        vendor/lib*/hw/android.hardware.sensors@2.X-subhal-mediatek.so|\
+        vendor/lib*/libaalservice.so)
+            "$PATCHELF" --add-needed "libshim_sensors.so" "$2"
+            ;;
 	vendor/bin/hw/vendor.mediatek.hardware.mtkpower@1.0-service)
             "$PATCHELF" --replace-needed "android.hardware.power-V2-ndk_platform.so" "android.hardware.power-V2-ndk.so" "$2"
             ;;
