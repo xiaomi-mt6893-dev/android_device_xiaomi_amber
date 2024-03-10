@@ -26,6 +26,10 @@ PRODUCT_PACKAGES += \
     android.hardware.boot-service.default \
     android.hardware.boot-service.default_recovery
 
+PRODUCT_PACKAGES += \
+    create_pl_dev \
+    create_pl_dev.recovery
+
 # A/B
 PRODUCT_PACKAGES += \
     update_engine \
