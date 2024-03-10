@@ -110,7 +110,8 @@ PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey
 
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.4.vendor:64
+    android.hardware.drm@1.4.vendor \
+    libprotobuf-cpp-lite-3.9.1-vendorcompat
 
 PRODUCT_PACKAGES += \
     libdrmclearkeyplugin:64 \
