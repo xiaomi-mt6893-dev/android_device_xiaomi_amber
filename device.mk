@@ -56,6 +56,10 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     audio.usb.default \
+    audio.bluetooth.default \
+    audio.primary.default \
+    audio.r_submix.default \
+    audio_policy.stub \
     libaudiofoundation.vendor \
     libalsautils \
     libtinycompress \
