@@ -24,6 +24,6 @@ PRODUCT_CHARACTERISTICS := nosdcard
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="amber_global-user 12 SP1A.210812.016 V14.0.5.0.TKWMIXM release-keys"
+    PRIVATE_BUILD_DESC="amber_global-user 12 SP1A.210812.016 V14.0.6.0.TKWMIXM release-keys"
 
-BUILD_FINGERPRINT := Xiaomi/amber_global/amber:12/SP1A.210812.016/V14.0.5.0.TKWMIXM:user/release-keys
+BUILD_FINGERPRINT := Xiaomi/amber_global/amber:12/SP1A.210812.016/V14.0.6.0.TKWMIXM:user/release-keys

@@ -135,7 +135,7 @@ TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 ENABLE_VENDOR_RIL_SERVICE := true
 
 # Security patch level
-VENDOR_SECURITY_PATCH := 2023-07-01
+VENDOR_SECURITY_PATCH := 2023-10-01
 
 # SEPolicy
 include device/mediatek/sepolicy_vndr/SEPolicy.mk

@@ -81,8 +81,8 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    android.hardware.camera.device@3.6.vendor:64 \
-    android.hardware.camera.provider@2.6.vendor:64
+    android.hardware.camera.device@3.6.vendor \
+    android.hardware.camera.provider@2.6.vendor
 
 # ConsumerIr
 PRODUCT_PACKAGES += \
@@ -118,8 +118,8 @@ PRODUCT_PACKAGES += \
     libprotobuf-cpp-lite-3.9.1-vendorcompat
 
 PRODUCT_PACKAGES += \
-    libdrmclearkeyplugin:64 \
-    libmockdrmcryptoplugin:64
+    libdrmclearkeyplugin \
+    libmockdrmcryptoplugin
 
 # Dynamic Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
@@ -179,15 +179,15 @@ PRODUCT_COPY_FILES += \
 
 # Keymaster
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@4.0.vendor:64
+    android.hardware.keymaster@4.0.vendor
 
 PRODUCT_PACKAGES += \
-    libkeymaster4.vendor:64 \
-    libkeymaster4support.vendor:64 \
-    libkeymaster_portable.vendor:64 \
-    libkeymaster_messages.vendor:64 \
-    libsoft_attestation_cert.vendor:64 \
-    libpuresoftkeymasterdevice.vendor:64
+    libkeymaster4.vendor \
+    libkeymaster4support.vendor \
+    libkeymaster_portable.vendor \
+    libkeymaster_messages.vendor \
+    libsoft_attestation_cert.vendor \
+    libpuresoftkeymasterdevice.vendor
 
 # Light
 PRODUCT_PACKAGES += \
@@ -307,8 +307,8 @@ include $(LOCAL_PATH)/vendor_logtag.mk
 
 # Radio
 PRODUCT_PACKAGES += \
-    android.hardware.radio.config@1.3.vendor:64 \
-    android.hardware.radio@1.6.vendor:64
+    android.hardware.radio.config@1.3.vendor \
+    android.hardware.radio@1.6.vendor
 
 # Rootdir
 PRODUCT_PACKAGES += \
@@ -378,8 +378,8 @@ PRODUCT_COPY_FILES += \
 
 # Wi-Fi
 PRODUCT_PACKAGES += \
-    android.hardware.tetheroffload.config@1.0.vendor:64 \
-    android.hardware.tetheroffload.control@1.1.vendor:64 \
+    android.hardware.tetheroffload.config@1.0.vendor \
+    android.hardware.tetheroffload.control@1.1.vendor \
     android.hardware.wifi-service
 
 PRODUCT_PACKAGES += \
