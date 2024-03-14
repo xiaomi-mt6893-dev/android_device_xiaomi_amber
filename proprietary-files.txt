@@ -1081,7 +1081,7 @@ system_ext/lib64/vendor.mediatek.hardware.videotelephony-V1-ndk.so|b4733a99049d5
 system_ext/lib64/vendor.mediatek.hardware.videotelephony@1.0.so|1385634094de90c59b9f689d313b6b3ee8770efe
 
 # IMS (App) - from plato-user 14 UP1A.230620.001 V14.0.7.0.ULQMIXM release-keys (patched)
--system_ext/priv-app/ImsService/ImsService.apk:priv-app/ImsService/ImsService.apk|62e6a0c457812366623630dffef27b0bf5ca7fad
+-system_ext/priv-app/ImsService/ImsService.apk:system/priv-app/ImsService/ImsService.apk|62e6a0c457812366623630dffef27b0bf5ca7fad
 
 # Keymaster
 vendor/bin/bp_kmsetkey_ca
@@ -1135,9 +1135,9 @@ vendor/lib/libMtkOmxCore.so
 vendor/lib/libMtkOmxGsmDec.so
 vendor/lib/libMtkOmxMp3Dec.so
 vendor/lib/libadpcmdec_mtk.so
-vendor/lib/libalacdec_mtk.so
 vendor/lib/libmp3dec_mtk.so
 vendor/lib/libstagefrighthw.so
+vendor/lib64/libalacdec_mtk.so
 vendor/lib64/libstagefrighthw.so
 
 # MMS
@@ -1197,7 +1197,6 @@ vendor/lib64/mt6893/libDR.so
 vendor/lib64/mt6893/libaiselector.so
 vendor/lib64/mt6893/libgpudataproducer.so
 vendor/lib64/mt6893/libmcv_runtime.mtk.so
-vendor/lib64/mt6893/libmdla_ut.so
 vendor/lib64/mt6893/libmnl.so
 vendor/lib64/mt6893/libneuron_platform.vpu.so
 vendor/lib64/mt6893/libneuron_runtime.5.so
@@ -1212,7 +1211,7 @@ vendor/lib64/vendor.mediatek.hardware.apuware.xrp@2.0.so
 
 # NFC
 vendor/etc/st21nfc_conf.txt
-vendor/firmware/st21nfc_fw.bin
+vendor/firmware/st21nfc_fw7.bin
 
 # NVRAM
 vendor/bin/hw/vendor.mediatek.hardware.nvram@1.1-service
@@ -1286,12 +1285,14 @@ vendor/lib64/libcarrierconfig.so
 vendor/lib64/libccci_util.so
 vendor/lib64/libmipc.so
 vendor/lib64/libmnetlink_v104.so
+vendor/lib64/libmtk-fusion-ril-prop-vsim.so
 vendor/lib64/libmtk-ril.so
 vendor/lib64/libmtkares.so
 vendor/lib64/libmtkconfig.so
 vendor/lib64/libmtkconfigutils.so
 vendor/lib64/libmtkcutils.so
 vendor/lib64/libmtkhardware_legacy.so
+vendor/lib64/libmtkmipc-ril.so
 vendor/lib64/libmtknetcap.so
 vendor/lib64/libmtknetutils.so
 vendor/lib64/libmtkproperty.so
@@ -1305,6 +1306,8 @@ vendor/lib64/librilfusion.so
 vendor/lib64/libstorage_otp.so
 vendor/lib64/libsysenv.so
 vendor/lib64/libtrm.so
+vendor/lib64/libvia-ril.so
+vendor/lib64/libviamipc-ril.so
 vendor/lib64/libwpfa.so
 vendor/lib64/vendor.mediatek.hardware.mtkradioex@2.0.so
 vendor/lib64/vendor.mediatek.hardware.mtkradioex@3.0.so
@@ -1351,6 +1354,8 @@ vendor/lib/libteeclientjni_isee@1.1.so
 vendor/lib/libteei_daemon_vfs.so
 vendor/lib/libthha.so
 vendor/lib64/libTEECommon.so
+vendor/lib64/libgz_gp_client.so
+vendor/lib64/libgz_uree.so
 vendor/lib64/libimsg_log.so
 vendor/lib64/libteecli.so
 vendor/lib64/libteeclientjni_isee.so
@@ -1403,6 +1408,7 @@ vendor/bin/thermal_manager
 vendor/bin/thermalloadalgod
 vendor/etc/.tp/.thermal_policy_08
 vendor/etc/.tp/thermal.conf
+vendor/etc/.tp/thermal.off.conf
 vendor/etc/init/init.thermal.rc
 vendor/etc/init/init.thermal_core.rc
 vendor/etc/init/init.thermal_manager.rc
@@ -1429,15 +1435,13 @@ vendor/etc/thermal-region-map.conf
 vendor/etc/thermal-tgame.conf
 vendor/etc/thermal-video.conf
 vendor/etc/thermald-devices.conf
-vendor/lib/libmtcloader.so
 vendor/lib/libthermalalgo.so
-vendor/lib64/hw/thermal_hal.so
 vendor/lib64/libmtcloader.so
 
 # USB
 vendor/bin/hw/android.hardware.usb@1.2-service-mediatekv2
 vendor/etc/init/android.hardware.usb@1.2-service-mediatekv2.rc
-vendor/etc/vintf/manifest/android.hardware.usb@1.2-service-mediatekv2.xml
+-vendor/etc/vintf/manifest/android.hardware.usb@1.2-service-mediatekv2.xml
 
 # Vibrator
 vendor/firmware/aw8697_haptic.bin
