@@ -176,8 +176,6 @@ vendor/etc/aurisys_param/Speech_AudioParam.xml
 vendor/bin/hw/android.hardware.bluetooth@1.1-service-mediatek
 vendor/etc/init/android.hardware.bluetooth@1.1-service-mediatek.rc
 vendor/firmware/BT_FW.cfg
-vendor/firmware/soc3_0_ram_bt_1_1_hdr.bin
-vendor/firmware/soc3_0_ram_bt_1a_1_hdr.bin
 vendor/lib/hw/android.hardware.bluetooth@1.1-impl-mediatek.so
 vendor/lib/libbluetooth_mtk.so
 vendor/lib/libbluetooth_mtk_pure.so
@@ -196,6 +194,10 @@ vendor/lib64/hw/vendor.mediatek.hardware.bluetooth.audio@2.2-impl.so
 vendor/lib64/libbluetooth_audio_session_mediatek.so
 vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.1.so
 vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.2.so
+
+# Bluetooth (Firmware) - lyriq_g-user 13 T2TLS33M.3-62-3-3 53ab1 release-keys
+vendor/firmware/soc3_0_ram_bt_1_1_hdr.bin|acd63fd89779c03c2cea07185d1ec40ee80bccfc
+vendor/firmware/soc3_0_ram_bt_1a_1_hdr.bin|0f6a4af6927e84da1323aea285e2c1f42d4ace13
 
 # Camera
 vendor/bin/hw/camerahalserver
@@ -814,11 +816,13 @@ vendor/etc/init/init.batterysecret.rc
 # Connectivity
 vendor/bin/conninfra_loader
 vendor/firmware/conninfra.cfg
-vendor/firmware/soc3_0_patch_wmmcu_1a_1_hdr.bin
-vendor/firmware/soc3_0_ram_mcu_1_1_hdr.bin
-vendor/firmware/soc3_0_ram_mcu_1a_1_hdr.bin
-vendor/firmware/soc3_0_ram_mcu_e1_hdr.bin
-vendor/firmware/soc3_0_ram_wmmcu_1a_1_hdr.bin
+
+# Connectivity (Firmware) - lyriq_g-user 13 T2TLS33M.3-62-3-3 53ab1 release-keys
+vendor/firmware/soc3_0_patch_wmmcu_1a_1_hdr.bin|9671b8f40b27e701b70591aae91b9e79e3b056ea
+vendor/firmware/soc3_0_ram_mcu_1_1_hdr.bin|a881ea9e81a0915676eebf96158392ff84c44573
+vendor/firmware/soc3_0_ram_mcu_1a_1_hdr.bin|8e22ae96ee179131d05ed2ad1d43587212e6b858
+vendor/firmware/soc3_0_ram_mcu_e1_hdr.bin|c9633025811954c13cb5a3a2ab24041d9993d1ee
+vendor/firmware/soc3_0_ram_wmmcu_1a_1_hdr.bin|ba09d601fc99bc3bec4d997a661f86335d41fe00
 
 # Consumer IR
 vendor/lib64/hw/consumerir.common.so
@@ -1450,7 +1454,9 @@ vendor/firmware/aw8697_haptic.bin
 vendor/bin/wlan_assistant
 vendor/etc/init/wlan_assistant.rc
 vendor/etc/wifi/passpointProfile.conf
-vendor/firmware/WIFI_RAM_CODE_soc3_0_1a_1.bin
-vendor/firmware/soc3_0_ram_wifi_1a_1_hdr.bin
 vendor/firmware/wifi.cfg
 vendor/lib64/libwifi-hal.so:vendor/lib64/libwifi-hal-mtk.so
+
+# Wi-Fi (Firmware) - lyriq_g-user 13 T2TLS33M.3-62-3-3 53ab1 release-keys
+vendor/firmware/WIFI_RAM_CODE_soc3_0_1a_1.bin|22fa9c6c4adb6396d293ca211cc5ceee48e7901a
+vendor/firmware/soc3_0_ram_wifi_1a_1_hdr.bin|f75f6d23d07e89ed390dab6c2fbb1fab6fa5eff3
