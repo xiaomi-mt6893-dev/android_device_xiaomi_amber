@@ -108,11 +108,6 @@ on post-fs
     mkdir /mnt/vendor/persist/audio 0755 system system
     #Audio End
 
-    symlink /dev/block/mapper/pl_a /dev/block/by-name/preloader_raw_a
-    symlink /dev/block/mapper/pl_b /dev/block/by-name/preloader_raw_b
-    symlink /dev/block/mapper/pl_a /dev/block/platform/bootdevice/by-name/preloader_raw_a
-    symlink /dev/block/mapper/pl_b /dev/block/platform/bootdevice/by-name/preloader_raw_b
-
     #haptic Start
     mkdir /mnt/vendor/persist/haptics 0755 system system
     #haptic End
