@@ -196,15 +196,12 @@ PRODUCT_COPY_FILES += \
 
 # Keymaster
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@4.0.vendor
-
-PRODUCT_PACKAGES += \
-    libkeymaster4.vendor \
-    libkeymaster4support.vendor \
-    libkeymaster_portable.vendor \
-    libkeymaster_messages.vendor \
+    libkeymaster4_1support.vendor \
+    libkeymaster41.vendor \
+    libpuresoftkeymasterdevice.vendor \
     libsoft_attestation_cert.vendor \
-    libpuresoftkeymasterdevice.vendor
+    android.hardware.keymaster@4.1.vendor \
+    android.hardware.hardware_keystore.km41.xml
 
 # Light
 PRODUCT_PACKAGES += \
@@ -218,16 +215,17 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libavservices_minijail_vendor \
     libcodec2_hidl@1.2.vendor \
-    libcodec2_soft_common.vendor \
+    libstagefright_softomx_plugin.vendor \
     libsfplugin_ccodec_utils.vendor \
     libcodec2_soft_common.vendor \
     libstagefright_foundation-v33
 
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video_le.xml
+    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml
 
 PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/seccomp,$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy) \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/media,$(TARGET_COPY_OUT_VENDOR)/etc)
 
 # Neural Networks
@@ -328,9 +326,6 @@ PRODUCT_PACKAGES += \
     vendor.mediatek.hardware.mtkpower@1.1.vendor \
     vendor.mediatek.hardware.mtkpower@1.2.vendor \
 
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*.xml,$(LOCAL_PATH)/configs/power/,$(TARGET_COPY_OUT_VENDOR)/etc)
-
 # Power Off Alarm
 PRODUCT_PACKAGES += \
     PowerOffAlarm
@@ -400,7 +395,7 @@ PRODUCT_PACKAGES += \
 
 # Soundtrigger
 PRODUCT_PACKAGES += \
-    android.hardware.soundtrigger@2.3-impl
+    android.hardware.soundtrigger@2.3-impl:32
 
 # USB
 PRODUCT_PACKAGES += \

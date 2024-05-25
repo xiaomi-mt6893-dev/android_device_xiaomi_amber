@@ -18,7 +18,7 @@ static const variant_info_t amber_info = {
     .mod_device = "amber_global",
     .marketname = "Xiaomi 11T",
     .model = "21081111RG",
-    .build_fingerprint = "Xiaomi/amber_global/amber:12/SP1A.210812.016/V14.0.6.0.TKWMIXM:user/release-keys",
+    .build_fingerprint = "Xiaomi/amber_global/amber:12/SP1A.210812.016/V816.0.4.0.UKWMIXM:user/release-keys",
 };
 
 static const std::vector<variant_info_t> variants = {

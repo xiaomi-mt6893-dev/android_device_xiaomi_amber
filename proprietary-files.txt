@@ -1,4 +1,7 @@
-# Unpinned blobs from amber_global-user 12 SP1A.210812.016 V14.0.6.0.TKWMIXM release-keys
+# Unpinned blobs from amber_global-user 12 SP1A.210812.016 V816.0.4.0.UKWMIXM release-keys
+
+# ADSP-Modules
+vendor/lib/rfsa/adsp/libSuperSensor_skel.so
 
 # AEE
 vendor/lib/libaedv.so
@@ -842,7 +845,7 @@ vendor/lib/egl/mt6893/libGLES_mali.so
 vendor/lib/hw/mt6893/android.hardware.graphics.allocator@4.0-impl-mediatek.so
 vendor/lib/hw/mt6893/android.hardware.graphics.mapper@4.0-impl-mediatek.so
 vendor/lib/hw/mt6893/vulkan.mali.so
-vendor/lib/hw/vendor.mediatek.hardware.pq@2.13-impl.so
+vendor/lib/hw/vendor.mediatek.hardware.pq@2.15-impl.so
 vendor/lib/libDefaultFpsActor.so
 vendor/lib/libFrameRecord.so
 vendor/lib/libNoFpsActor.so
@@ -881,6 +884,8 @@ vendor/lib/vendor.mediatek.hardware.pq@2.10.so
 vendor/lib/vendor.mediatek.hardware.pq@2.11.so
 vendor/lib/vendor.mediatek.hardware.pq@2.12.so
 vendor/lib/vendor.mediatek.hardware.pq@2.13.so
+vendor/lib/vendor.mediatek.hardware.pq@2.14.so
+vendor/lib/vendor.mediatek.hardware.pq@2.15.so
 vendor/lib/vendor.mediatek.hardware.pq@2.2.so
 vendor/lib/vendor.mediatek.hardware.pq@2.3.so
 vendor/lib/vendor.mediatek.hardware.pq@2.4.so
@@ -899,7 +904,7 @@ vendor/lib64/hw/hwcomposer.mt6893.so
 vendor/lib64/hw/mt6893/android.hardware.graphics.allocator@4.0-impl-mediatek.so
 vendor/lib64/hw/mt6893/android.hardware.graphics.mapper@4.0-impl-mediatek.so
 vendor/lib64/hw/mt6893/vulkan.mali.so
-vendor/lib64/hw/vendor.mediatek.hardware.pq@2.13-impl.so
+vendor/lib64/hw/vendor.mediatek.hardware.pq@2.15-impl.so
 vendor/lib64/libDefaultFpsActor.so
 vendor/lib64/libFrameRecord.so
 vendor/lib64/libNoFpsActor.so
@@ -939,6 +944,8 @@ vendor/lib64/vendor.mediatek.hardware.pq@2.10.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.11.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.12.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.13.so
+vendor/lib64/vendor.mediatek.hardware.pq@2.14.so
+vendor/lib64/vendor.mediatek.hardware.pq@2.15.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.2.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.3.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.4.so
@@ -953,6 +960,9 @@ vendor/firmware/novatek_ts_fw.bin
 vendor/firmware/novatek_ts_fw_144.bin
 vendor/firmware/novatek_ts_fw_jdi.bin
 vendor/firmware/novatek_ts_fw_tm.bin
+vendor/firmware/stm_fts_production_limits_k11st.csv
+vendor/firmware/st_fts_k11st.ftb
+vendor/firmware/st_fts_k11st_htp.ftb
 vendor/firmware/valhall-1691526.wa
 vendor/firmware/stm_fts_production_limits_k11st.csv
 vendor/firmware/st_fts_k11st.ftb
@@ -1057,41 +1067,48 @@ vendor/lib64/libifcutils_mtk.so
 system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml
 -system_ext/framework/com.android.hotwordenrollment.common.util.jar
 
-# IMS - from plato-user 14 UP1A.230620.001 V14.0.7.0.ULQMIXM release-keys
-system_ext/bin/vtservice|59adc81ee1ad1f3fb4942cd6e8e7100325002eb2
-system_ext/etc/init/init.vtservice.rc|50a2249906edc06059b443513db47a2ddc0490dc
--system_ext/framework/mediatek-common.jar:system/framework/mediatek-common.jar|895c6819d00deb385675cc7b90f073d0b6fbd29d
--system_ext/framework/mediatek-framework.jar:system/framework/mediatek-framework.jar|a9789fd904f4b0643a3257e798318faabf342477
--system_ext/framework/mediatek-ims-base.jar:system/framework/mediatek-ims-base.jar|a6f7ae937de5b9c25e41af8c15db2717a31a6e97
--system_ext/framework/mediatek-ims-common.jar:system/framework/mediatek-ims-common.jar|8fc8f9dbbe56a309fa620222430cc854143672fb
--system_ext/framework/mediatek-ims-extension-plugin.jar:system/framework/mediatek-ims-extension-plugin.jar|4562720d65136b189d661f248fd3170a749cada3
--system_ext/framework/mediatek-telecom-common.jar:system/framework/mediatek-telecom-common.jar|686eaf0a472f44194116a0861944483cd9b09a38
--system_ext/framework/mediatek-telephony-base.jar:system/framework/mediatek-telephony-base.jar|f66b872e413d16fc29d22ead4e94984f84be94e9
--system_ext/framework/mediatek-telephony-common.jar:system/framework/mediatek-telephony-common.jar|869c6918a945ecb87d8b30ec5ca4056d6b863099
-system_ext/lib64/libcomutils.so|6d9cd979f33ef01cb26861a38a59e76e1c2a3acb
-system_ext/lib64/libimsma_adapt.so|b95939f797ba52d87bb9fa6ebf356e0fb4fcfe56
-system_ext/lib64/libimsma_rtp.so|02b33fba68211362b439bb05a965ba6e01fa3ea0
-system_ext/lib64/libimsma_socketwrapper.so|1f9b83322c41e5b0a7b3130f74a38ddb14f578d8
-system_ext/lib64/libimsma.so|547ffdd8a8d57d6624b69eb27ac0e1642aab09bc
-system_ext/lib64/libmtk_vt_service.so|c46d43d49fb35e21cb34cdea1f33ad4b964e2f22
-system_ext/lib64/libmtk_vt_wrapper.so|b6f8737a084431cdd8d77c9188e176b7e9364876
-system_ext/lib64/libsignal.so|0f55bb64c660fe4cda2b695121580b054f026e73
-system_ext/lib64/libsink.so|15cb9262fd9e52cd29086f602bc3dafb52ab40b5|94972e8c36b576cbe74ecefbe72526714c1e1e16
-system_ext/lib64/libsource.so|8e702370bfd7bce526f18e31e71ed8a9942b2c38
-system_ext/lib64/libvcodec_cap.so|0165b65cd33fd3905ef3f569ff36bf119b27c13d
-system_ext/lib64/libvcodec_capenc.so|3b5e76522a7331248c2864493fdade2bdf73c4c3
-system_ext/lib64/libvt_avsync.so|632cb05532ef2e022072d91bff3c1ae47c888b7e
-system_ext/lib64/vendor.mediatek.hardware.videotelephony-V1-ndk.so|b4733a99049d5162e41955bca80cc78b8ca76c53
-system_ext/lib64/vendor.mediatek.hardware.videotelephony@1.0.so|1385634094de90c59b9f689d313b6b3ee8770efe
+# IMS
+system_ext/bin/vtservice
+system_ext/etc/init/init.vtservice.rc
+-system_ext/framework/mediatek-common.jar:framework/mediatek-common.jar
+-system_ext/framework/mediatek-framework.jar:framework/mediatek-framework.jar
+-system_ext/framework/mediatek-ims-base.jar:framework/mediatek-ims-base.jar
+-system_ext/framework/mediatek-ims-common.jar:framework/mediatek-ims-common.jar
+-system_ext/framework/mediatek-ims-extension-plugin.jar:framework/mediatek-ims-extension-plugin.jar
+-system_ext/framework/mediatek-telecom-common.jar:framework/mediatek-telecom-common.jar
+-system_ext/framework/mediatek-telephony-base.jar:framework/mediatek-telephony-base.jar
+-system_ext/framework/mediatek-telephony-common.jar:framework/mediatek-telephony-common.jar
+system_ext/lib64/libcomutils.so
+system_ext/lib64/libimsma.so
+system_ext/lib64/libimsma_adapt.so
+system_ext/lib64/libimsma_rtp.so
+system_ext/lib64/libimsma_socketwrapper.so
+system_ext/lib64/libmtk_vt_service.so
+system_ext/lib64/libmtk_vt_wrapper.so
+system_ext/lib64/libsignal.so
+system_ext/lib64/libsink.so
+system_ext/lib64/libsource.so
+system_ext/lib64/libvcodec_cap.so
+system_ext/lib64/libvcodec_capenc.so
+system_ext/lib64/libvt_avsync.so
+system_ext/lib64/vendor.mediatek.hardware.videotelephony-V1-ndk.so
+system_ext/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
 
 # IMS (App) - from plato-user 14 UP1A.230620.001 V14.0.7.0.ULQMIXM release-keys (patched)
--system_ext/priv-app/ImsService/ImsService.apk:system/priv-app/ImsService/ImsService.apk|62e6a0c457812366623630dffef27b0bf5ca7fad
+-system_ext/priv-app/ImsService/ImsService.apk:priv-app/ImsService/ImsService.apk|75ec3cb494c98c18f0ec7197c9592a8ac4f1a492
 
 # Keymaster
 vendor/bin/bp_kmsetkey_ca
-vendor/bin/hw/android.hardware.keymaster@4.0-service.beanpod
-vendor/etc/init/android.hardware.keymaster@4.0-service.beanpod.rc
+vendor/bin/hw/android.hardware.keymaster@4.1-service.beanpod
+vendor/bin/hw/vendor.mediatek.hardware.keymaster_attestation@1.1-service
 vendor/etc/init/microtrust.bp_kmsetkey_ca.rc
+vendor/etc/init/android.hardware.keymaster@4.1-service.beanpod.rc
+vendor/etc/init/vendor.mediatek.hardware.keymaster_attestation@1.1-service.rc
+vendor/lib64/hw/kmsetkey.beanpod.so
+vendor/lib64/hw/vendor.mediatek.hardware.keymaster_attestation@1.1-impl.so
+vendor/lib64/libkmsetkey.so
+vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.0.so
+vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.1.so
 
 # Media
 vendor/bin/vpud
@@ -1110,15 +1127,6 @@ vendor/lib/libvpud_vcodec.so
 vendor/lib/mt6893/libmtk_drvb.so
 vendor/lib64/libvpu.so
 vendor/lib64/mt6893/libmtk_drvb.so
-
-# Media (Configs)
-vendor/etc/mtk_omx_core.cfg
-vendor/etc/mtk_platform_codecs_config.xml
-vendor/etc/seccomp_policy/android.hardware.media.c2@1.2-extended-seccomp-policy
-vendor/etc/seccomp_policy/android.hardware.media.c2@1.2-mediatek-seccomp-policy
-vendor/etc/seccomp_policy/mediacodec.policy
-vendor/etc/seccomp_policy/mediaextractor.policy
-vendor/etc/seccomp_policy/mediaswcodec.policy
 
 # Media (Codec2)
 vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b:vendor/bin/hw/android.hardware.media.c2@1.2-mediatek
@@ -1141,7 +1149,6 @@ vendor/lib/libMtkOmxMp3Dec.so
 vendor/lib/libadpcmdec_mtk.so
 vendor/lib/libmp3dec_mtk.so
 vendor/lib/libstagefrighthw.so
-vendor/lib64/libalacdec_mtk.so
 vendor/lib64/libstagefrighthw.so
 
 # MMS

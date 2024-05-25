@@ -8,11 +8,22 @@ import /vendor/etc/init/hw/init.modem.rc
 
 on early-init
     # load vendor-modules
-    exec_background u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules/ fts_touch_spi xiaomi_touch fpsgo wlan_drv_gen4m wmt_chrdev_wifi gps_drv bt_drv_6893 conninfra connfem
+    exec_background u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules/ fts_touch_spi xiaomi_touch fpsgo wlan_drv_gen4m wmt_chrdev_wifi gps_drv bt_drv_6893 conninfra connfem met
 
+    # initialize vendor.all.modules.ready to 1 here to prevent NOT GKI project blocked
     setprop vendor.all.modules.ready 1
 
 on init
+    # Support legacy paths
+    symlink /sdcard /mnt/sdcard
+
+    # if primary storage is physical, set ro.vold.primary_physical to 1
+    # setprop ro.vold.primary_physical 1
+
+    mkdir /mnt/cd-rom 0000 system system
+
+    # add this link for cust mount
+    symlink /dev/block/platform/bootdevice /dev/block/bootdevice
 
 # change lk_env permission
     chown root system /proc/lk_env
@@ -29,9 +40,8 @@ on late-init
 # mount different fs start
 
 on charger
-    write /proc/perfmgr/boost_ctrl/cpu_ctrl/boot_freq "-1 -1 -1 -1 -1 -1"
-    write /sys/devices/platform/boot_dramboost/dramboost/dramboost 0
-
+    exec /system/bin/e2fsck -f -p /dev/block/platform/bootdevice/by-name/cache
+    mount ext4 /dev/block/platform/bootdevice/by-name/cache /cache rw wait
     chmod 0660 /dev/spm
     chown system system /dev/spm
     start spm_script
@@ -66,28 +76,38 @@ on charger
     start mi_thermald
 
 on fs
-    start vendor.boot-hal-1-2
-
     # mount fstab
+    write /sys/kernel/tracing/trace_marker "B|1|Mount"
     mount_all --early
     exec /system/bin/tune2fs -O has_journal -u 10010 -r 4096 /dev/block/platform/bootdevice/by-name/userdata
+    write /sys/kernel/tracing/trace_marker "E"
 
     write /sys/block/zram0/comp_algorithm lz4
     write /proc/sys/vm/page-cluster 0
     write /proc/sys/vm/swappiness 100
     write /sys/kernel/mm/swap/vma_ra_enabled false
-    swapon_all /vendor/etc/fstab.mt6893
 
     # mount rescue
     mount ext4 /dev/block/bootdevice/by-name/rescue /mnt/rescue noatime
     restorecon_recursive /mnt/rescue
 
+on fs
+   mount iso9660 loop@/vendor/etc/iAmCdRom.iso /mnt/cd-rom ro
+
+   mount ext4 /dev/block/by-name/rescue /mnt/rescue noatime
+   restorecon_recursive /mnt/rescue
+
+
 on late-fs
     wait_for_prop hwservicemanager.ready "true"
 
+    write /sys/kernel/tracing/trace_marker "B|1|Mount late"
     mount_all --late
+    write /sys/kernel/tracing/trace_marker "E"
 
 on post-fs
+    # Support legacy paths
+    symlink /sdcard /storage/sdcard0
 
     #change permissions for mediaserver
     chown root media /proc/clkmgr/mipi_test
@@ -108,10 +128,6 @@ on post-fs
     mkdir /mnt/vendor/persist/audio 0755 system system
     #Audio End
 
-    #haptic Start
-    mkdir /mnt/vendor/persist/haptics 0755 system system
-    #haptic End
-
 # change owner
     chown root system /proc/mtprof/cputime
     chown root system /proc/mtprof/reboot_pid
@@ -128,6 +144,9 @@ on post-fs
 
 on post-fs-data
     wait_for_prop vendor.all.modules.ready 1
+
+    # zram
+    swapon_all /vendor/etc/fstab.mt6893
 
     # boot time fs tune
     write /sys/block/mmcblk0/queue/iostats 0
@@ -223,6 +242,7 @@ on post-fs-data
     #Audio Start for audio and haptic cit
     mkdir /data/vendor/cit 0770 system system
     #Audio End
+
 # -----------------------
 # Add by MTK
     # SCP log
@@ -331,7 +351,6 @@ on post-fs-data
 
     #Make MTU adjusting
     write /proc/sys/net/ipv4/tcp_mtu_probing 1
-
     #Accdet
     chown root radio /sys/devices/platform/Accdet_Driver/driver/accdet_call_state
 
@@ -627,6 +646,10 @@ on post-fs-data
     chmod 0664 /sys/bus/platform/drivers/emi_ctrl/concurrency_scenario
     chown media media /sys/bus/platform/drivers/emi_ctrl/concurrency_scenario
 
+    #mtk_sched
+    chmod 0660 /dev/mtk_sched
+    chown system media /dev/mtk_sched
+
     #BT SCO CVSD, for MT6572 and MT6582 CVSD codec on AP
     chmod 0660 /dev/ebc
     chown media media /dev/ebc
@@ -651,6 +674,10 @@ on post-fs-data
 	mkdir /data/vendor/.tp/ 0775 system system
 	mkdir /data/vendor/thermal/ 0775 system system
 
+    #haptic Start
+    mkdir /mnt/vendor/persist/haptics 0755 system system
+    #haptic End
+
     #MCUPM log
     chmod 0620 /sys/class/misc/mcupm/mcupm_mobile_log
     chown root system /sys/class/misc/mcupm/mcupm_mobile_log
@@ -673,7 +700,6 @@ on post-fs-data
 
 # End of adding by MTK drivers
 # -----------------------
-on zygote-start
 
 on early-boot
     verity_update_state
@@ -688,9 +714,9 @@ on boot
 
     chmod 0664 /sys/class/mi_display/disp_feature/doze_brightness
     chown system system /sys/class/mi_display/disp_feature/doze_brightness
-    
+
     chmod 0664 /sys/class/mi_display/disp_feature/brightness_clone
-    chown system system /sys/class/mi_display/disp_feature/brightness_clone   
+    chown system system /sys/class/mi_display/disp_feature/brightness_clone
 
     chmod 0664 /sys/class/mi_display/disp_feature/dc_status
     chown system system /sys/class/mi_display/disp_feature/dc_status
@@ -720,7 +746,7 @@ on boot
     chown system system /sys/class/leds/red/trigger
     chown system system /sys/class/leds/green/trigger
     chown system system /sys/class/leds/blue/trigger
-    
+
     chmod 0664 /sys/class/leds/red/brightness
     chown system system /sys/class/leds/red/brightness
     chmod 0664 /sys/class/leds/green/brightness
@@ -906,7 +932,23 @@ on property:vold.decrypt=trigger_reset_main
     setprop sys.boot_completed 0
     setprop dev.bootcomplete 0
 
-on property:vold.decrypt=trigger_post_fs_data
+#Audio Start
+on property:vendor.audio.cit.spkcal.copy=true
+    chmod 644 /data/vendor/cit/cs35l41_cal.bin
+    chmod 644 /data/vendor/cit/cs35l41_cal.txt
+    copy /data/vendor/cit/cs35l41_cal.bin /mnt/vendor/persist/audio/cs35l41_cal.bin
+    copy /data/vendor/cit/cs35l41_cal.txt /mnt/vendor/persist/audio/cs35l41_cal.txt
+    chmod 666 /mnt/vendor/persist/audio/cs35l41_cal.bin
+    chmod 666 /mnt/vendor/persist/audio/cs35l41_cal.txt
+    chmod 666 /data/vendor/cit/cs35l41_cal.bin
+    chmod 666 /data/vendor/cit/cs35l41_cal.txt
+#Audio End
+
+on property:vendor.audio.voice.receiver.status=on
+    write /sys/class/thermal/thermal_message/voice_receiver_state 10000
+
+on property:vendor.audio.voice.receiver.status=off
+    write /sys/class/thermal/thermal_message/voice_receiver_state 10001
 
 on property:vold.decrypt=trigger_restart_min_framework
     start msensord
@@ -920,18 +962,6 @@ on property:vold.decrypt=trigger_shutdown_framework
     setprop sys.boot_completed 0
     setprop dev.bootcomplete 0
 
-#Audio Start
-on property:vendor.audio.cit.spkcal.copy=true
-    chmod 644 /data/vendor/cit/cs35l41_cal.bin
-    chmod 644 /data/vendor/cit/cs35l41_cal.txt
-    copy /data/vendor/cit/cs35l41_cal.bin /mnt/vendor/persist/audio/cs35l41_cal.bin
-    copy /data/vendor/cit/cs35l41_cal.txt /mnt/vendor/persist/audio/cs35l41_cal.txt
-    chmod 666 /mnt/vendor/persist/audio/cs35l41_cal.bin
-    chmod 666 /mnt/vendor/persist/audio/cs35l41_cal.txt
-    chmod 666 /data/vendor/cit/cs35l41_cal.bin
-    chmod 666 /data/vendor/cit/cs35l41_cal.txt
-#Audio End
-
 # bugreport is triggered by holding down volume down, volume up and power
 service bugreport /system/bin/dumpstate -d -p -B -z \
         -o /data/user_de/0/com.android.shell/files/bugreports/bugreport
@@ -942,13 +972,6 @@ service bugreport /system/bin/dumpstate -d -p -B -z \
 
 # end boot time fs tune
 on property:sys.boot_completed=1
-    # Setup runtime cpusets
-    write /dev/cpuset/top-app/cpus 0-7
-    write /dev/cpuset/foreground/cpus 0-5,7
-    write /dev/cpuset/background/cpus 4-5
-    write /dev/cpuset/system-background/cpus 2-5
-    write /dev/cpuset/restricted/cpus 2-5
-
     write /sys/block/mmcblk0/queue/iostats 1
     write /sys/block/mmcblk0/queue/read_ahead_kb 512
     write /sys/block/mmcblk0/queue/nr_requests 128
@@ -962,9 +985,39 @@ on property:sys.boot_completed=1
     write /sys/block/dm-4/queue/read_ahead_kb 128
     write /sys/block/dm-5/queue/read_ahead_kb 128
 
-on property:sys.boot_completed=1
-    write /proc/perfmgr/boost_ctrl/cpu_ctrl/boot_freq "-1 -1 -1 -1 -1 -1"
-    write /sys/devices/platform/boot_dramboost/dramboost/dramboost 0
+#service dpfd /vendor/bin/dpfd
+#	user root
+#	group system media
+
+#
+#  External Modme control related services
+#
+
+#
+#  Modem related services (Begin)
+#
+##Add by T.Zh for ppp daemon
+#service pppd /system/bin/pppd file /data/misc/ppp/ppp_options
+#    user root
+#    disabled
+#    oneshot
+#
+##
+#
+#  Modem related services (End)
+#
+
+#add for power-off alarm
+#service poad /vendor/bin/poad
+#    class main
+#    user system
+#    group system
+#    oneshot
+
+#service BGW /vendor/xbin/BGW
+#	user system
+#	group gps system radio
+#	class main
 
 # Battery info
 on property:persist.vendor.mediatek.fg.disable=1
@@ -1044,5 +1097,3 @@ service mi_thermald /system/vendor/bin/mi_thermald
     class main
     user root
     group system
-    #seclabel u:r:mi_thermald:s0
-
