@@ -1,5 +1,6 @@
 on post-fs
     mkdir /dev/usb-ffs 0775 shell shell
+    mkdir /dev/usb-ffs/adb 0770 shell shell
     mkdir /config/usb_gadget/g1 0770 shell shell
     write /config/usb_gadget/g1/idVendor 0x2717
     write /config/usb_gadget/g1/bcdDevice 0x0223
@@ -125,8 +126,7 @@ on post-fs
 
 on boot
     setprop sys.usb.configfs 2
-    setprop vendor.usb.controller "musb-hdrc"
-    # bind mtp on the big core for MT6893
+    setprop sys.usb.controller "usb0"
     write /sys/class/android_usb/android0/f_mtp/cpu_mask 0x80
     write /sys/module/usb_f_mtp/parameters/mtp_rx_cont 1
     chmod 0664 /sys/class/android_usb/android0/iSerial
@@ -170,6 +170,9 @@ on boot
     chmod 664 /sys/class/udc/${sys.usb.controller}/device/mode
     chmod 664 /sys/class/udc/${sys.usb.controller}/device/saving
 
+on property:dev.bootcomplete=1
+    write /config/usb_gadget/g1/strings/0x409/product ${ro.product.marketname}
+
 on charger
     mkdir /config/usb_gadget/g1 0770 shell shell
     write /config/usb_gadget/g1/idVendor 0x2717
@@ -185,12 +188,12 @@ on charger
     mkdir /config/usb_gadget/g1/configs/b.1/strings/0x409 0770 shell shell
     write /config/usb_gadget/g1/configs/b.1/MaxPower 500
     mount functionfs adb /dev/usb-ffs/adb uid=2000,gid=2000
+    setprop sys.usb.controller "usb0"
     setprop sys.usb.configfs 1
-    setprop vendor.usb.controller "musb-hdrc"
     setprop sys.usb.config hid
 
-### more command at init.usb.configfs.rc ###
 on property:sys.usb.ffs.ready=1 && property:sys.usb.config=adb && property:sys.usb.configfs=1
+    write /config/usb_gadget/g1/idVendor 0x2717
     write /config/usb_gadget/g1/idProduct 0xFF08
 
 ### HID for KPOC ###
@@ -202,14 +205,5 @@ on property:sys.usb.config=hid && property:sys.usb.configfs=1
     #write /config/usb_gadget/g1/functions/hid.gs0/report_length 4
     #write /config/usb_gadget/g1/functions/hid.gs0/report_desc \\x05\\x01\\x09\\x00\\xa1\\x01\\xc0
     symlink /config/usb_gadget/g1/functions/hid.gs0 /config/usb_gadget/g1/configs/b.1/f1
-    write /config/usb_gadget/g1/UDC ${vendor.usb.controller}
-    setprop sys.usb.state ${sys.usb.config}
-
-### main function : adb ###
-### start adbd at init.usb.configfs.rc ###
-on property:sys.usb.ffs.ready=1 && property:sys.usb.config=adb && property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "adb"
-    write /config/usb_gadget/g1/idProduct 0xFF08
-    symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f1
     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
     setprop sys.usb.state ${sys.usb.config}
